@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            var pic = document.getElementById('pic');
+            var picArr = ['../../../images/学成在线/图1.png', '../../../images/学成在线/图2.png', '../../../images/学成在线/图3.png', '../../../images/学成在线/图4.png'];
+            var index = 0;
+            var btn1 = document.getElementById('btn1');
+            var btn2 = document.getElementById('btn2');
+            var stop;
+            btn1.onmouseover = function () {
+                /* *注意我们设置的是单击响应函数 我们每点击一次就会开启一个定时器 每开一个定时器都会赋值一次stop，导致图片切换速度过快
+                 所以clearInterval(stop)永远停止的是最后一个定时器 造成停止按钮无效
+                */
+                //在开启定时器之前，需要将当前元素上的其他定时器关闭
+                clearInterval(stop);
+                stop = setInterval(function () {
+                    index++;
+                    //算法 index = index % picArr.length;与下面if判断作用一样
+                    if (index > 3) {
+                        index = 0;
+                    }
+
+                    pic.src = picArr[index];
+                }, 1000)
+            }
+
+            btn2.onclick = function () {
+                //clearInterval()可以接收任意值 有效的标识符则会停止 不是标识符什么也不会操作 但是不会报错
+                clearInterval(stop);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <img src="../../../images/学成在线/图1.png" id="pic">
+    <br><br>
+    <button id="btn1">开始</button>
+    <button id='btn2'>停止</button>
+</body>
+
+</html>

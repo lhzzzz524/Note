@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr = [12, 5, 56, 6, 5, 8, 5, 5, 8];
+        var newArrys = [];
+        for (i = 0; i < arr.length; i++) {
+            if (newArrys.indexOf(arr[i]) === -1) {   //第一次newArrys.indexOF(12)值为-1 表示newArrys里没有这个值 依次遍历每个元素当碰到相同的值newArrys.indexOf(arr[i])=1就不赋值
+                newArrys.push(arr[i])                //就把老数组里的值赋给新数组
+            }
+        }
+        console.log(newArrys);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

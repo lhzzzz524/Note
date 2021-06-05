@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1.翻转数组
+        var arr = [1, 2, 3, 4, 5, 6, 7, 8];
+        arr.reverse();
+        console.log(arr);
+
+        // 2.冒泡排序
+        var arr1 = [3, 4, 5, 78, 5, 3, 34, 56, 57];
+        // arr1.sort();    对于多位数字，会把它们每个位数最高位相同的数字放在一起  [3, 3, 34, 4, 5, 5, 56, 57, 78]
+        // console.log(arr1);
+
+        arr1.sort(function (a, b) {
+            //return a - b; 升序
+            return b - a;  //降序
+        })
+        console.log(arr1);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #add {
+            width: 250px;
+            height: 200px;
+            text-align: center;
+            margin: 200px auto;
+            border: 1px solid red;
+        }
+
+        button {
+            margin: 15px;
+        }
+    </style>
+
+    <script>
+        //删除a链接
+        function delA() {
+            /*
+             注意：
+                for循环在页面创建时就执行这时allA[i]=arrA[arrA.length]=arrA[3]所以不能用allA[i]替代 绑定单击响应函数只是绑定 并没有执行  
+                使用this当我们点击时 this指向的就是我们点击的对象
+            */
+            var tr = this.parentNode.parentNode; //获取a节点的父亲的父亲的节点tr
+
+            // confirm()创建一个可确认和取消的对话框 点确定结果为true 点取消结果为false
+            if (confirm('确定要辞职本员工吗') == true) {
+                tr.parentNode.removeChild(tr);  //获取tr的父节点table 删除tr节点
+
+                return false; //返回错误的处理结果;终止处理;阻止提交表单;阻止执行默认的行为.
+            }
+        }
+
+        window.onload = function () {
+            var allA = document.getElementsByTagName('a');
+            for (var i = 0; i < allA.length; i++) {
+                allA[i].onclick = delA; //注意是赋值对象不加()
+            }
+
+            /* 
+              <tr align="center">
+               <td>吕航哲</td>
+               <td>21</td>
+               <td>4000</td>
+               <td><a href="#">辞职</a></td>
+              </tr>
+             */
+            var btn = document.getElementById('addButton');
+            btn.onclick = function () {
+                //获取输入的员工信息
+                var name = document.getElementById('name').value;
+                var age = document.getElementById('age').value;
+                var money = document.getElementById('money').value;
+
+                //创建一个tr
+                var tr = document.createElement('tr');
+
+                //创建五个td 包括四个td节点和a节点
+                var nametd = document.createElement('td');
+                var agetd = document.createElement('td');
+                var moneytd = document.createElement('td');
+                var delAtd = document.createElement('td');
+                var a = document.createElement('a');
+
+                //创建文本
+                var nameText = document.createTextNode(name);
+                var ageText = document.createTextNode(age);
+                var moneyText = document.createTextNode(money);
+                var delAText = document.createTextNode('辞职');
+
+                //td里添加文本
+                nametd.appendChild(nameText);
+                agetd.appendChild(ageText);
+                moneytd.appendChild(moneyText);
+                //向a里添加文本 再把a添加给delAtd
+                a.appendChild(delAText);
+                delAtd.appendChild(a);
+                a.href = '#';
+
+                //把td添加到tr
+                tr.appendChild(nametd);
+                tr.appendChild(agetd);
+                tr.appendChild(moneytd);
+                tr.appendChild(delAtd);
+
+                //把tr添加到它的父节点
+                //获取table
+                var table = document.getElementsByTagName('table')[0];
+                var btody = table.getElementsByTagName('tbody')[0];
+                btody.appendChild(tr);
+
+                a.onclick = delA;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <table align="center" border="1" cellspacing='0'>
+        <tr align="center">
+            <th width=60>名字</th>
+            <th width=60>年龄</th>
+            <th width=80>工资</th>
+            <th width=60>辞职</th>
+        </tr>
+        <tr>
+            <td>吕航哲</td>
+            <td>21</td>
+            <td>4000</td>
+            <td><a href="../HTML DOM/全选练习.html">辞职</a></td>
+        </tr>
+        <tr>
+            <td>熊科</td>
+            <td>21</td>
+            <td>2000</td>
+            <td><a href="#">辞职</a></td>
+        </tr>
+        <tr>
+            <td>王峰</td>
+            <td>21</td>
+            <td>5000</td>
+            <td><a href="#">辞职</a></td>
+        </tr>
+    </table>
+    <div id='add'>
+        <h4>添加新员工</h4>
+        <table align="center">
+            <tr>
+                <td class="wotd">名字：</td>
+                <td class="inp">
+                    <input type="text" name="name" id="name">
+                </td>
+
+            </tr>
+            <tr>
+                <td class="wotd">年龄：</td>
+                <td class="inp">
+                    <input type="text" name="age" id="age">
+                </td>
+
+            </tr>
+            <tr>
+                <td class="wotd">工资：</td>
+                <td class="inp">
+                    <input type="text" name="money" id="money">
+                </td>
+            </tr>
+            <tr>
+                <td align="center" colspan="2">
+                    <button id="addButton" value="abc">确定</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

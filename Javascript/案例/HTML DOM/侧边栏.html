@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .slider-bar {
+            position: absolute;
+            left: 50%;
+            top: 300px;
+            margin-left: 600px;
+            width: 45px;
+            height: 130px;
+            background-color: pink;
+        }
+
+        .w {
+            width: 1200px;
+            margin: 10px auto;
+        }
+
+        .header {
+            height: 150px;
+            background-color: purple;
+        }
+
+        .banner {
+            height: 250px;
+            background-color: skyblue;
+        }
+
+        .main {
+            height: 1000px;
+            background-color: yellowgreen;
+        }
+
+        span {
+            display: none;
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            var header = document.querySelector('.header');
+            var banner = document.querySelector('.banner');
+            var main = document.querySelector('.main');
+            var slider = document.querySelector('.slider-bar')
+            var goBack = document.querySelector('.goBack');
+            var bannerTop = banner.offsetTop;
+            var sliderTop = slider.offsetTop - bannerTop;
+            document.onscroll = function () {
+                if (window.pageYOffset >= bannerTop) {
+                    slider.style.position = 'fixed';
+                    slider.style.top = sliderTop + 'px';
+                } else {
+                    slider.style.position = 'absolute';
+                    slider.style.top = 300 + 'px';
+                }
+
+                if (window.pageYOffset >= main.offsetTop) {
+                    goBack.style.display = 'block';
+                } else {
+                    goBack.style.display = 'none';
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="slider-bar">
+        <span class="goBack">返回顶部</span>
+    </div>
+    <div class="header w">头部区域</div>
+    <div class="banner w">banner区域</div>
+    <div class="main w">主体部分</div>
+</body>
+
+</html>

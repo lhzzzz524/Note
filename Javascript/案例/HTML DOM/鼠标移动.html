@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+    </style>
+
+    <!-- 使div跟随指针移动 -->
+
+    <script>
+        window.onload = function () {
+            var box = document.getElementById('box');
+            //onmousemove鼠标被移动
+            document.onmousemove = function (event) {
+                event = event || window.event;
+                /*
+                因为有时页面有滚动效果 所以pageX pageY 可以获取显对于页面的鼠标坐标
+                IE8里没有这个属性，所以这种写法不可用
+                    var left = event.pageX;
+                    var top = event.pageY;
+                    alert(left) //undefind
+                */
+
+                //获取鼠标在可见窗口的坐标
+                var left = event.clientX;
+                var top = event.clientY;
+
+                //获取鼠标滚动的距离
+                var scroll_top = document.documentElement.scrollTop;
+                var scroll_left = document.documentElement.scrollLeft;
+
+                //设置div移动坐标与鼠标移动的坐标一样
+                // *设置盒子移动必须开启绝对定位
+                box.style.left = left + scroll_left + 'px';
+                box.style.top = top + scroll_top + 'px';
+            }
+        }
+    </script>
+
+</head>
+
+<body style="height: 1000px;width: 3000px;">
+    <div id="box"></div>
+    <button id="btn">点击我查看图片</button>
+    <img src="../../../images/鼠标与盒子的相对距离.png" id="pic" style="display: none;">
+    <script>
+        var pic = document.getElementById('pic');
+        var btn = document.getElementById('btn');
+        btn.onclick = function () {
+            pic.style.display = 'block';
+
+        }
+
+        btn.onmousemove = function (event) {
+            //取消冒泡
+            event = event || window.event;
+            event.cancelBubble = true;
+        }
+    </script>
+</body>
+
+</html>

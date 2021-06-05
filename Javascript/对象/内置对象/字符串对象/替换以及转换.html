@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str = 'dfjasdfhdshfdihsdh';
+        console.log(str.replace('d', '@')); //替换第一个检测到得字符
+
+        // 把所有d替换成*
+        var str1 = 'dfjasdfhdshfdihsdh';
+        while (str1.indexOf('d') !== -1) {
+            str1 = str1.replace('d', '*');
+        }
+        console.log(str1);
+
+        // 字符转换为数组 split('分隔符');
+        var str2 = 'lhz,xk,zyy';
+        console.log(str.split(','));//以,作为分隔符 转换为数组
+
+        var str3 = 'gjsdfhgidhsgu';
+        console.log(str.split('s')); //以s作为分隔符 转换为数组
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

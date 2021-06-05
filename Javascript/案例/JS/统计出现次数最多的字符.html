@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str = 'fjaslhfgahajsghaahfasdhfg';
+        var o = {};
+        var max = 0;
+        var ch = '';
+        // 当在为一个对象动态的添加属性时，不可以使用点，必须使用[  ] 例如下:
+        /*    for (i = 0; i < str.length; i++) {
+               var all = str.char At(i);
+               if (o.all) {
+                   o.all++;
+               } else {
+                   o.all = 1;
+               }
+           }
+           console.log(o);
+    */
+        for (i = 0; i < str.length; i++) {
+            var all = str.charAt(i);
+            if (o[all]) {   //得到的是属性值 如果o对象里没有这个属性就是false就赋值1，有这个属性就是true加1
+                o[all]++;
+            } else {
+                o[all] = 1;
+            }
+        }
+        console.log(o);
+
+        // 遍历o对象
+        for (var a in o) {
+            //a 遍历属性,得到属性名
+            //o[a]) 输出属性对应的值
+            if (max < o[a]) {
+                max = o[a];
+                ch = a;
+            }
+        }
+        console.log('出现最多次数得字符是' + ch + '出现了' + max + '次');
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

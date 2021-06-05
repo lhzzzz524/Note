@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+
+        #box1 {
+            position: absolute;
+            left: 100px;
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+    </style>
+    <!-- 
+        鼠标点击box 拖动 可以将box移动到目标位置
+        步骤1：鼠标在拖拽元素上按下时，开始拖拽   onmousedown
+        步骤2: 鼠标移动box跟随鼠标移动           onmousemove
+        步骤3：鼠标送开时box固定在当前位置       onmouseup
+    -->
+    <script>
+        window.onload = function () {
+            var box = document.getElementById('box');
+            function drag(obj) { //obj 传入绑定的元素
+                obj.onmousedown = function (event) {
+                    event = event || window.event;
+                    //获取盒子相对位置的偏移
+                    var ol = event.clientX - obj.offsetLeft;
+                    var ot = event.clientY - obj.offsetTop;
+
+                    //setCapture() releaseCapture()这个方法在IE8里才有 火狐不会报错能够运行 但是在chrome里报错下面的程序将不再执行
+                    //box调用了setCapture方法，那么在box外面甚至浏览器窗口外发生的鼠标事件都会通知box上绑定的事件回调事件进行执行。
+                    obj.setCapture && obj.setCapture(); //如果浏览器有box.releaseCapture这个对象再调用box.setCapture()
+
+                    document.onmousemove = function (event) {
+                        event = event || window.event;
+                        //获取鼠标位置
+                        //设置盒子跟随鼠标指针移动
+                        obj.style.left = event.clientX - ol + 'px';
+                        obj.style.top = event.clientY - ot + 'px';
+                    };
+
+                    //鼠标松开
+                    document.onmouseup = function () {
+                        //鼠标松开后使盒子固定就是把移动事件取消 因为这两个事件都是在鼠标按下时有效 所以只设置一次取消掉
+                        document.onmousemove = null;
+                        document.onmouseup = null;
+                        //我们只想在点击的时候去捕获鼠标点击事件，松开时取消 使用releaseCapture()
+                        obj.releaseCapture && obj.releaseCapture();
+                    };
+                    //当我们拖动一个网页中的内容，浏览器会默认去搜索引擎查找 此时拖拽功能会显示异常，这是浏览器的默认行为 IE8里使用setCapture() releaseCapture()
+                    //如果不希望发生这个行为，可以return false取消默认事件 对IE8不起作用
+                    return false;
+                };
+
+            }
+            drag(box);
+            drag(box1)
+        };
+
+    </script>
+</head>
+
+<body>
+    <p>文字</p>
+    <div id="box"></div>
+    <div id="box1"></div>
+    <button id="btn">点击box内的任意位置可进行拖动固定说明</button>
+    <img src="../../../images/窗口拖动说明.png" style="display: none;" id="img">
+    <script>
+        var btn = document.getElementById('btn');
+        var img = document.getElementById('img');
+        btn.onclick = function () {
+            img.style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>

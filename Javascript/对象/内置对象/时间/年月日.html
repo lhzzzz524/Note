@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            var but = document.getElementById('but');
+            function time() {
+                var date = new Date();
+                /*      
+                    console.log(date);
+                    console.log(date.getFullYear()); //返回Date里的年份
+                    console.log(date.getMonth());//返回一个0-11的整数 0代表一月份 1代表二月份一次类推
+                    console.log(date.getDay());//0代表星期日 1代表星期一依次类推
+                    console.log(date.getDate());//返回一个月的哪一日
+                 */
+                // 输出例2021年4月23日星期四
+                var year = date.getFullYear();
+                var month = date.getMonth() + 1;
+                var dates = date.getDate();
+                var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+                var day = date.getDay();
+                return year + '年' + month + '月' + dates + '日 ' + arr[day];
+
+            }
+            but.onclick = function () {
+                alert(time());
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button id='but'>点击</button>
+</body>
+
+</html>

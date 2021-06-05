@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //使用构造函数创建
+        //ar reg = new RegExp('a', 'i');
+
+        //使用字面量来创建正则表达式 var 变量 = /正则表达式/匹配模式
+        var reg = /a/ig;  // i不区分大小写  g执行全局匹配（查找所有匹配而非在找到第一个匹配后停止）
+
+        console.log(typeof reg); //object 它是一个对象
+        console.log(reg.test('Abc')); //true
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

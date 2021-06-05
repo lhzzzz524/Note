@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var maney = 100;
+        while (true) {
+            var choice = prompt('请输入您要的操作:' + '\n' + '1.存钱' + '\n' + '2.取钱' + '\n' + '3.显示余额' + '\n' + '4.退出');
+            if (choice == 1) {
+                var maney1 = prompt('请输入存钱金额:');
+                maney = maney + parseInt(maney1);
+                alert('您现在的余额是:' + maney);
+            } else if (choice == 2) {
+                var maney2 = prompt('请输入取钱金额');
+                // 输入金额可能大于存钱金额
+                if (maney2 <= maney) {
+                    maney = maney - parseInt(maney2);
+                    alert('余额取出成功');
+                } else {
+                    alert('余额不足');
+                }
+            } else if (choice == 3) {
+                alert('您的余额是:' + maney);
+            } else if (choice == 4) {
+                alert('点击确定退出');
+                break;
+            } else {
+                alert('请输入1-4');
+            }
+        }
+
+
+        /*         第二种
+         var maney = 100;
+         while (true) {
+             var choice = prompt('请输入您要的操作:' + '\n' + '1.存钱' + '\n' + '2.取钱' + '\n' + '3.显示余额' + '\n' + '4.退出');
+             if (choice == 1) {
+                 var maney1 = prompt('请输入存钱金额:');
+                 maney = maney + parseInt(maney1);
+                 alert('您现在的余额是:' + maney);
+             }
+             if (choice == 2) {
+                 var maney2 = prompt('请输入取钱金额');
+                 // 输入金额可能大于存钱金额
+                 if (maney2 <= maney) {
+                     maney = maney - parseInt(maney2);
+                     alert('余额取出成功');
+                 } else {
+                     alert('余额不足');
+                 }
+             }
+             if (choice == 3) {
+                 alert('您的余额是:' + maney);
+             }
+             if (choice == 4) {
+                 alert('点击确定退出');
+                 break;
+             }
+             if (choice != 1 && choice != 2 && choice != 3 && choice != 4) {
+                 alert('请输入1-4');
+             }
+         }
+        */
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

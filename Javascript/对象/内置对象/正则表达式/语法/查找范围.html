@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 创建一个正则表达式，检查一个字符串是否含有abc三个字符，缺一不可
+        var reg = /abc/;
+        console.log(reg.test('abcdhf')); //true
+        console.log(reg.test('abdfa'));  //false
+
+        // 检查一个字符是否含有a或b
+        //[]里的内容是或 | 的关系
+        reg = /[ab]/;
+        console.log(reg.test('arger')) //true
+        console.log(reg.test('bdg'));  //true
+        console.log(reg.test('vfh'));  //false
+
+        //检查任意数字
+        reg = /[0-9]/;
+        console.log(reg.test('abc'));  //false
+        console.log(reg.test('89'));   //true
+
+        //检查任意小写字母
+        reg = /[a-z]/;
+        console.log(reg.test('s'));   //true
+        console.log(reg.test('A'));   //false
+
+        //检查任意字母
+        reg = /[A-z]/;
+        console.log(reg.test('DFsf'));  //true
+
+        //检查一个字符串是否含有abc，adc，aec
+        reg = /a[bde]c/;
+        console.log(reg.test('adc'));   //true
+        console.log(reg.test('aec'));   //true
+        console.log(reg.test('ac'));    //false
+
+        // [^] 除了 除了a或b的任意字符
+        reg = /[^ab]/;
+        console.log(reg.test('a'));     //false
+        console.log(reg.test('ab'));    //false
+        console.log(reg.test('c'));     //true
+        console.log(reg.test('jggjh')); //true
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

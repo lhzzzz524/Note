@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            replace()
+             可以将字符串中指定内容替换为新的内容
+             参数1：被替换的内容，可以为正则表达式
+             参数2：新的内容
+
+          默认只会替换一个指定的内容
+         */
+        var str = '1a2b3a4a5a6f7G8H9I';
+        result = str.replace('a', '&');
+        console.log(result);     //1&2b3a4a5a6f7G8H9I
+
+        //把所有a替换成&
+        result = str.replace(/a/g, '&');
+        console.log(result);     //1&2b3&4&5&6f7G8H9I
+
+        //把所有字母替换成@-@
+        result = str.replace(/[A-z]/g, '@-@');
+        console.log(result);     //1@-@2@-@3@-@4@-@5@-@6@-@7@-@8@-@9@-@
+
+        //字母为空
+        result = str.replace(/[A-z]/g, '');
+        console.log(result);     //123456789
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

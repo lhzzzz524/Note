@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1.利用字面量
+        var arr = [1, 2, 3];
+        console.log(arr[1]);
+
+        //2.利用数字对象
+        var arr1 = new Array(2); //这个2表示数组的长度
+        var arr2 = new Array(1, 13, 4, 5) //等于[1,13,4,5]
+        console.log(arr1);
+        console.log(arr2);
+
+        // 检查是否为数组
+        // 1.利用instanceof字符
+        var arr3 = [];
+        var arra = {};
+        console.log(arr3 instanceof Array); //true
+        console.log(arra instanceof Array);//false
+
+        // 2.Array.isArray(参数) H5新增的方法
+        console.log(Array.isArray(arr3));//true
+        console.log(Array.isArray(arra));//false
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

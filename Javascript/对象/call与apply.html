@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //call()与apply()都是函数对象的方法 它们可以将一个对象指定为一个参数 那这个对象会成为函数执行时的this
+        //call()可以将实参在对象之后依次传递
+        //apply()需要将实参封装到一个数组中传递
+        function fun() {
+            console.log(this);
+        }
+        fun(); //window
+        fun.call();//window
+        fun.apply();//window
+
+        var obj = {
+            name: '剑圣'
+        }
+        fun.call(obj); //object
+
+
+        function fun1() {
+            console.log(this.name);
+        }
+        var obj = {
+            name: '剑圣'
+        }
+        fun1.call(obj); //剑圣
+        fun1.apply(obj);//剑圣
+
+
+        function fun2(a, b) {
+            console.log(this.name);
+            console.log('a=' + a);
+            console.log('b=' + b);
+        }
+        var obj = {
+            name: '剑圣'
+        }
+        fun2.call(obj, 1, 2);
+        fun2.apply(obj, [231, 233]);
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

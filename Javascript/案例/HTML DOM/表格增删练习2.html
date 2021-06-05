@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #add {
+            width: 250px;
+            height: 200px;
+            text-align: center;
+            margin: 200px auto;
+            border: 1px solid red;
+        }
+
+        button {
+            margin: 15px;
+        }
+    </style>
+
+    <script>
+        //删除a链接
+        function delA() {
+            var tr = this.parentNode.parentNode; //获取a节点的父亲的父亲的节点tr
+
+            // confirm()创建一个可确认和取消的对话框 点确定结果为true 点取消结果为false
+            if (confirm('确定要辞职本员工吗') == true) {
+                tr.parentNode.removeChild(tr);  //获取tr的父节点table 删除tr节点
+            }
+        }
+
+        window.onload = function () {
+            var allA = document.getElementsByTagName('a');
+            for (var i = 0; i < allA.length; i++) {
+                allA[i].onclick = delA; //注意是赋值对象不加()
+            }
+
+
+            var btn = document.getElementById('addButton');
+            btn.onclick = function () {
+                //获取输入的员工信息
+                var name = document.getElementById('name').value;
+                var age = document.getElementById('age').value;
+                var money = document.getElementById('money').value;
+
+                //创建一个tr
+                var tr = document.createElement('tr');
+                tr.innerHTML =
+                    '<td>' + name + '</td>' +
+                    '<td>' + age + '</td>' +
+                    '<td>' + money + '</td>' +
+                    '<td><a href="#">辞职</a></td>';
+
+                //此时a是tr的子节点的子节点
+                var a = tr.getElementsByTagName('a')[0];
+                a.onclick = delA;
+
+
+                //把tr添加到它的父节点
+                //获取table
+                var table = document.getElementsByTagName('table')[0];
+                var btody = table.getElementsByTagName('tbody')[0];
+                btody.appendChild(tr);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <table align="center" border="1" cellspacing='0'>
+        <tr align="center">
+            <th width=60>名字</th>
+            <th width=60>年龄</th>
+            <th width=80>工资</th>
+            <th width=60>辞职</th>
+        </tr>
+        <tr>
+            <td>吕航哲</td>
+            <td>21</td>
+            <td>4000</td>
+            <td><a href="#">辞职</a></td>
+        </tr>
+        <tr>
+            <td>熊科</td>
+            <td>21</td>
+            <td>2000</td>
+            <td><a href="#">辞职</a></td>
+        </tr>
+        <tr>
+            <td>王峰</td>
+            <td>21</td>
+            <td>5000</td>
+            <td><a href="#">辞职</a></td>
+        </tr>
+    </table>
+    <div id='add'>
+        <h4>添加新员工</h4>
+        <table align="center">
+            <tr>
+                <td class="wotd">名字：</td>
+                <td class="inp">
+                    <input type="text" name="name" id="name">
+                </td>
+
+            </tr>
+            <tr>
+                <td class="wotd">年龄：</td>
+                <td class="inp">
+                    <input type="text" name="age" id="age">
+                </td>
+
+            </tr>
+            <tr>
+                <td class="wotd">工资：</td>
+                <td class="inp">
+                    <input type="text" name="money" id="money">
+                </td>
+            </tr>
+            <tr>
+                <td align="center" colspan="2">
+                    <button id="addButton" value="abc">确定</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

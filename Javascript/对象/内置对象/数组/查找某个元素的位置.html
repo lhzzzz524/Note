@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var nulls = [];
+        var arr = ['a', 'b', 'a', 'c', 'a'];
+        var seek = 'a';
+        var indexs = arr.indexOf(seek);             //返回第一个a的索引
+        while (indexs != -1) {
+            nulls.push(indexs);                     //把第一个a的索引传给新数组nulls
+
+            indexs = arr.indexOf(seek, indexs + 1); //如果indexs总是从第一个索引号开始查找 那么查找第一个a的索引号的值始终是0 
+            //所以indexs+1 是第一个a的索引找完后 索引+1也就是'b'后面找'a'的索引是2返回给nulls.push(indexs)结果为2;
+            //再从'b'索引加1也就是'a'开始找后面的'a'最后一个'a'的索引是4传给nulls.push(indexs)
+        }
+        console.log(nulls);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

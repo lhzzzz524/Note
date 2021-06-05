@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            局部作用域也叫函数作用域
+            1.调用函数时创建局部作用域，函数执行完毕之后，局部作用域就会销毁
+            2.每调用一次函数就会创建一个新的函数作用域，他们之间时相互独立的
+            *3.在函数作用域中可以访问到全局作用域的变量，在全局作用域中无法访问到函数作用域的变量
+            *4.当在函数作用域操作一个变量时，它会先在自身作用域寻找，没有就去上一级作用域查找，就近原则
+            *5.函数中要访问全局变量可以使用window对象
+            *6.在函数声明中不使用var声明的变量会成为全局变量
+            *7.定义形参就相当于在函数作用域声明了变量
+         */
+
+        //当在函数作用域操作一个变量时，它会先在自身作用域寻找，没有就去上一级作用域查找，就近原则
+        var a = 10;
+        function fun() {
+            console.log(a);
+        }
+        fun();
+
+        //函数中要访问全局变量可以使用windows对象
+        function fun1() {
+            var a = 20;
+            console.log(window.a);
+        }
+        fun1(); // 10
+
+        var b = 30;
+        function fun2() {
+            console.log(b);
+            b = 40;
+        }
+        fun2();
+        console.log(b);//40 在函数声明中不是var声明的变量会成为全局变量相当于window.d
+
+        var e = 40;
+        function fun3(e) {   //定义形参就相当于在函数作用域声明了变量相当于function fun3() {var e; console.log(e)}
+            console.log(e);
+        }
+        fun3();//undefind
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

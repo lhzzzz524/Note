@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var reg = /./;  //单个.表示任意字符
+        console.log(reg.test('abchau')); //true
+
+        /* 
+          检查一个字符是否含有.
+         *在正则表达式中\表示转义字符
+          \.表示.
+        */
+        reg = /\./;
+        console.log(reg.test('fja.df')); //true
+        console.log(reg.test('fj'));     //false
+
+        /* 
+            \\表示\  
+        */
+        reg = /\\/;
+        console.log(reg.test('fd\\'));   //true 这里要注意输出也要两个\\一个计算机会当成\'输出
+
+
+        //使用构造函数时，由于他的参数是一个字符串，而\是字符串中的转义字符，如果要使用则需要\\来代替
+        reg = new RegExp('\.');
+        console.log(reg.test('123'));      //true
+        console.log(reg);                // /./
+
+        reg1 = new RegExp('\\.');
+        console.log(reg1);               // /\./
+        console.log(reg1.test('d\\.'));  //true
+
+        /*
+            \w  任意数字、字母、下划线_  [A-z0-9_]
+            \W  除了数字、字母、下划线_  [^A-z0-9_]
+            \d  任意数字 [0-9]
+            \D  除了数字 [^0-9]
+            \s  空格
+            \S  除了空格
+            \b  单词边界 每个英语语句的中间都有空格 某个单词的前后距离就叫单词边界,简单来说就是一个独立的单词
+            \B  除了单词边界
+         */
+
+        reg = /\w/;
+        console.log(reg.test('d'));      //true
+        console.log(reg.test('324'));    //true
+        console.log(reg.test('_'));      //true
+
+        reg = /\W/;
+        console.log(reg.test('d'));      //false
+        console.log(reg.test('\.'));     //true
+
+        reg = /\d/;
+        console.log(reg.test('384'));    //true
+
+        reg = /\D/;
+        console.log(reg.test('384'));    //false
+        console.log(reg.test('d'));      //true
+
+        reg = /\s/;
+        console.log(reg.test('df j'));   //true
+
+        reg = /\S/;
+        console.log(reg.test(''));       //false
+        console.log(reg.test('df f'));   //true
+
+
+        // 创建一个正则表达式检查一个字符串里是否有单词child
+        reg = /child/;
+        console.log(reg.test('hello children')); //true 这里的单词children并不是单词child 但结果只要有child几个字母就会返回true 结果有局限性
+
+        reg = /\bchild\b/;
+        console.log(reg.test('hello children')); //false
+        console.log(reg.test('hello child'));    //true
+
+        reg = /\Bchild\B/;
+        console.log(reg.test('hello child'));    //false
+        console.log(reg.test('fdsachildfjfas')); //true
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

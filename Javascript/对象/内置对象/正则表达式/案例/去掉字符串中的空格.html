@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str = '        hello      ';
+        console.log(str);
+        str = str.replace(/\s/g, '')
+        console.log(str);
+
+        // 去除字符串前的字符,不去除字符串中间的空格
+        str = '         l h r     ';
+        console.log(str);
+        str = str.replace(/^\s*/, ''); //去除s前0个或多个字符
+        console.log(str);
+        console.log(str.replace(/\s/g, '@')); //方便查看效果
+
+        // 去除字符串后的字符,不去除字符串中间的空格
+        str = '         l h r     ';
+        str = str.replace(/\s*$/, '');
+        console.log(str);
+        console.log(str.replace(/\s/g, '@')); //方便查看效果
+
+        // 整合 去除字符串前后的空格
+        str = str.replace(/^\s*|\s*$/g, '');
+        console.log(str);
+        console.log(str.replace(/\s/g, '@')); //方便查看效果
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

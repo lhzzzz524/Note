@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 1.我们所创建的每一个函数对象，解析器都会向函数中添加一个prototype属性，这个属性对应着一个对象，这个对象就是我们所谓的原型对象
+          *2.原型对象就相当于一个公共的区域，所有同一个类的实例都可以访问到这个原型对象
+          我们可以将对象中共有的内容统一设置到原型对象中
+          *3.当我们访问对象的一个属性或方法时，它会先在对象自身中寻找，如果有则直接使用，没有就会取原型对象中寻找
+           4.当函数以构造函数调用时，它所创建的对象中都会有个隐含的属性指向该构造函数的原型对象，可以通过__proto__访问
+           5.如果函数作为普通函数调用prototype没有任何作用
+         */
+
+        function Fun() {
+
+        }
+        Fun.prototype.a = 123;//向原型对象里添加a
+
+        Fun.prototype.sayLalala = function () { //向原型添加方法
+            alert('我叫啦啦啦');
+        };
+
+        var mc = new Fun();
+        var mc2 = new Fun();
+        var mc3 = new Fun();
+
+        console.log(Fun.prototype);//Object 解析器会向函数(Fun)中添加一个prototype属性，这个属性对应着一个对象，这个对象就是我们所谓的原型对象
+        console.log(mc.__proto__ == Fun.prototype);// true  当函数以构造函数调用时，它所创建的对象(mc)中都会有个隐含的属性指向该构造函数的原型对象可以通过__proto__访问
+
+        console.log(mc.a);
+        mc.sayLalala();
+
+
+
+    </script>
+</head>
+
+<body>
+    <img src="../../../images/原型对象.png" alt="">
+</body>
+
+</html>

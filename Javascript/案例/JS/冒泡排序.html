@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr = [46, 3, 26, 7, 65, 43];
+        //外层循环管趟数，六个数字需要五趟交换 两个数字交换1次比较 3个数字交换2次交换 类推
+        for (var i = 0; i < arr.length - 1; i++) {
+            //里层循环管每趟里的数字需要交换的次数，第一个数字需要五次交换后，第二个数字需要交换四次，因为躺数i初值为0，所以需要减一
+            for (var j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    var temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+        console.log(arr);
+    </script>
+</head>
+
+<body>
+    <h1><a href="../对象/内置对象/数组排序.html">构造函数更简单哦</a></h1>
+</body>
+
+</html>

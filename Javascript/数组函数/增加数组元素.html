@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1.利用length修改长度
+        var arr = ['熊科', '吕航哲', '张耀宇', '王峰', '程越', '李怀成'];
+        arr.length = 8; //长度修改为8
+        console.log(arr);
+        console.log(arr[7]); //这些新添加的underfined
+        console.log(arr[8]);  //这些新添加的underfined
+
+
+        // 2.利用新增数组元素 修改索引号 添加元素
+        var arr1 = ['熊科', '吕航哲', '张耀宇', '王峰', '程越', '李怀成'];
+        arr1[6] = '吴佳曦'; //直接在数组添加第七个元素
+        console.log(arr1);
+        arr1[7] = '啦啦啦'
+        console.log(arr1); //添加第八个元素
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

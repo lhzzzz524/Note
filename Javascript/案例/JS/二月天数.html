@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initaial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function tian() {
+            // 形参a可以不一样
+            var a = prompt('请输入天数:');
+            if (runpin(a)) {  //调用函数需要加小括号
+                alert('当前年份的2月份是28天');
+            } else {
+                alert('当前年份的2月份是29天');
+            }
+        }
+        tian();
+
+        function runpin(a) {
+            var fals = false;
+            if (a % 4 == 0 && a % 100 != 0 || a % 400 == 0) {
+                fals = true;
+            }
+            return fals;
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

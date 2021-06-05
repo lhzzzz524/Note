@@ -1,0 +1,43 @@
+1.使某个对象居中
+div.left = （视窗宽度-div的offsetWidth）/2
+
+2.缓动动画原理 step>0向右移动 step会出现小数 会小于目标距离 需要向上取整函数 
+(目标位置-现在位置)/10  step=(target-obj.offsetLeft)/10
+step = step > 0 ? Math.ceil(step) : Math.floor(step);
+
+
+3.节流阀目的
+当上一个函数动画内容执行完毕后，再去执行下一个函数动画，让时间无法连续触发
+思路:利用一个变量来控制，锁住函数后解锁函数
+var flag = true;
+if(flag) {flag = false;do something} 在动画完毕后flag = true
+
+4.放大镜 大图片随着遮罩层移动比例
+遮罩移动距离/遮罩最大移动距离=大图片移动距离/大图片最大移动距离
+大图片移动距离=大图片最大移动距离*遮罩移动距离/遮罩最大移动距离
+
+5.onkeydown onkeypress onkeyup
+onkeydown onkeypress两个事件响应函数 如果在文本框内使用时 在鼠标按下时就会触发响应函数再出现内容 所以使用onkeyup更为合适
+
+6.增加元素方式的区别 
+innerHtml 方式是将内容写入DOM节点 不会导致页面重绘 如果增加很多元素他的执行效率是三个当中最慢的
+createElement()方式创建多个元素 速度略慢与innerHtml数组创建方式 结构简洁
+innerHtml 采用数组(arr[] arr.push() arr.join())创建的方式，速度最快，效率最高，但是结构稍微复杂
+
+7.原型与原型链
+我们自己所创建的函数都是Function创造出来的实例对象，所以我们自己定义的函数既有prototype属性也有__proto__
+属性这个__proto__指向的时Function.prototyp 每个对象有__proto__属性 当函数以构造函数调用时 构造函数new出
+来的实例对象的__proto__指向该构造函数的prototype, prototype指向一个空的对象 而这个对象正是调用构造函数被
+实例化的原型对象，每个原型对象都会有个属性constructor来指向关联的构造函数。又因为原型对象也是一个对象，它是
+由Object构造函数生成的，所以原型对象是Object的实例，可以通过原型对象的__proto__访问。Object.prototype没
+有原型对象了，所以Object.prototype.__proto__ = null
+
+原型链是用来查找对象的属性(方法)的
+在查找一个对象的属性或方法时，会先在对象本身上去查找有则使用，没有就会通过__proto__隐式原型上查找即它的
+构造函数的prototype，这样一层一层的查找会形成一个结构，称为原型链
+
+8.new在执行时的操作
+1）在内存中开辟一个新对象
+2）让this指向这个新的对象
+3）执行构造函数里的代码，给新对象添加属性和方法
+4）返回这个新对象

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // parseFloat该函数指定字符串中的首个字符是否是数字。如果是，则对字符串进行解析，直到到达数字的末端为止，然后以数字返回该数字，而不是作为字符串。
+        var a = parseFloat(prompt('请输入第一个数字:'));
+        var b = parseFloat(prompt('请输入第二个数字:'));
+        function count(a, b) {
+            var arr = [a + b, a - b, a / b, a * b];
+            return arr;
+        }
+        var result = count(a, b);
+        alert(result);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

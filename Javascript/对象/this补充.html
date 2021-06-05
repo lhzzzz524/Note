@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var name = '泰达米尔';
+        function fun() {
+            console.log(this.name);
+        }
+        fun(); //此时this指的是Window里的全局变量的name与window.fun()一样
+        window.fun();
+
+
+        //创建一个对象
+        var obj = {
+            name: '雅典娜',
+            sayName: fun
+        };
+        //console.log(fun() == obj.fun);  true
+
+        var obj1 = {
+            name: '小乔',
+            sayName: fun
+        };
+        obj1.sayName(); //此时this指的是obj1.name这个对象 可以输出名字
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

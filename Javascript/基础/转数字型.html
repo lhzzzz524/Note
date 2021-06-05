@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //*3.Number(); 
+
+        //*如果字符串中里有非数字的内容则结果为NaN
+        //*如果字符串是一个空串或者是一个空格的字符串则输出结果为0
+        //*如果字符串是Boolean型 true输出结果为1 false为0
+        //*null转为数字型输出结果是0
+        //*undefined转为数字型输出结果是NaN
+        console.log(Number('213'));   //213
+        console.log(Number(''));      //0
+        console.log(Number('      '));//0
+        console.log(Number(null));    //0
+        console.log(Number(true));    //1 
+        console.log(Number('adf'));   //NaN
+        console.log(Number(undefined));//NaN
+
+        //1.parseInt() parseInt()可以将一个字符串中碰到的第一个数字取出来  再转换成Number
+        console.log(parseInt('120px')); //120  会去掉px这个单位
+
+        //2. parseFloat() 与parseInt()类似 但是它可以获得小数数字 再转换为Number
+        console.log(parseFloat('120px')); //120会去掉px这个单位
+        console.log(parseFloat('3.14'));  //3.14
+
+        //*如果对非String使用parseInt()和parseFloat()会先将其转换为String，然后再操作
+        console.log(parseInt(true));      //NaN
+
+        // 4.算数运算+ - * /隐式转换
+        console.log('12' - 0);
+        console.log('123' - '2');
+        console.log('123' * 1);
+        console.log('123' + 1);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

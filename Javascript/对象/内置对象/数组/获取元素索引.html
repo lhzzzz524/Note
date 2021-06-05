@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //注意返回的是索引号
+        var arr = [23, 4, 5, 67, 89, 89, 5];
+        console.log(arr.indexOf(2));   //找不到值则输出-1
+        console.log(arr.indexOf(4));   //1
+        console.log(arr.indexOf(5));   //2   只返回第一满足条件的值 
+        console.log(arr.indexOf(5, 3)); //6 从第三个元素开始查找5的位置
+        console.log(arr.indexOf(89, 5));//5
+        console.log(arr.indexOf(67, -5));//3 -1表示从倒数第一个元素往后查找 以此类推-5表示从倒数第五个元素开始 找不到值为-1
+        console.log(arr.indexOf(67, -3));//-1  -1表示从倒数第三个元素89往后查找，招不到值为-1
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // &&与运算 如果第一个值为true 则返回第二个值 如果第一个值为false 则返回第一个值
+        var result = 1 && 2; //2
+        result = 0 && 1;     //0
+        result = 1 && 0;     //0
+        result = NaN && '1';  //NaN
+        result = '0' && undefined;  //undefind
+        console.log(result);
+
+        // ||或运算 哪个值先表示true则返回哪个值 如果两个都为false则返回第二个值
+        var result1 = 1 || 2;//1
+        result1 = 2 || 1;    //2
+        result1 = 0 || 1;    //1
+        result1 = 1 || NaN;  //1
+        result1 = '' || 'flase';    //'false'
+        result1 = NaN || undefined; //undefined
+        console.log(result1);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

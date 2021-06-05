@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // split()可以将一个字符拆分为一个数组
+        var str = '1a2b3c4d5e6f7';
+        var result = str.split('3');
+        console.log(result);         //["1a2b", "c4d5e6f7g"]
+
+        //可以传递一个正则表达式
+        //根据任意字母拆分str
+        //这个方法即使不使用全局匹配，也会全部拆分 与search()方法相反
+        result = str.split(/[A-z]/);
+        console.log(result);         //["1", "2", "3", "4", "5", "6", "7"]
+
+        result = str.split(/[A-z]/g);
+        console.log(result);         //["1", "2", "3", "4", "5", "6", "7"]
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

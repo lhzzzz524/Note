@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str = 'lvhangzhe';
+        console.log(str.length);
+    </script>
+    <style>
+        p {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h4>
+        为了便于操作基本类型值，ECMAScript 提供了 3 个特殊的引用类型：Boolean、Number和
+        String。这些类型与其他引用类型相似，但同时也具有与各自的基本类型相应的特殊行为。实际上，每当读取一个基本类型值的时候，后台就会创建一个对应的基本包装类型的对象，从而能够调用一些方法来操作这些数据。
+    </h4>
+    <p>第一步 把简单数据类型包装成为一个对象(复杂数据类型)</p>
+    <p>var temp = new String('lvhangzhe');</p><br>
+    <p>第二步 临时变量的值传给str</p>
+    <p>str = temp;</p><br>
+    <p>第三步 销毁临时变量</p>
+    <p>temp = null;</p><br>
+</body>
+
+</html>

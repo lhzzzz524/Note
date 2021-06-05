@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //方法一
+        var arr = [12, 34, 23, 35, 169, 45, 99, 34, 78, 96, 78];
+        var arr1 = [];
+        var j = 0;
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] % 3 == 0) {
+                arr1[j] = arr[i];
+                j++;
+            }
+        }
+        console.log(arr1);
+
+
+        //方法二
+        var arr2 = [12, 34, 23, 35, 169, 45, 99, 34, 78, 96, 78];
+        var arr3 = [];
+        for (var a = 0; a < arr2.length; a++) {
+            if (arr2[a] % 2 == 0) {
+                // 新数组arr3的索引从0开始 arr3.length就是0 所以就是arr3[0]
+                arr3[arr3.length] = arr2[a];
+            }
+        }
+        console.log(arr3);
+
+
+        //方法三
+        var newArry = [];
+        for (var t = 0; t < arr.length; t++) {
+            if (arr[t] % 3 == 0) {
+                newArry.push(arr[t]);
+            }
+        }
+        console.log(newArry);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

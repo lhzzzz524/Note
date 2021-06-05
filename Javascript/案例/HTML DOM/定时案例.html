@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            left: 0px;
+        }
+
+        #box2 {
+            position: absolute;
+            left: 0px;
+            top: 200px;
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+
+        #line {
+            position: absolute;
+            left: 800px;
+            top: 0;
+            width: 0;
+            height: 1000px;
+            border-left: solid;
+        }
+    </style>
+
+    <script type="text/javascript" src="../../工具/动画.js"></script>
+    <script>
+        window.onload = function () {
+            var btn = document.getElementById('btn');
+            var btn2 = document.getElementById('btn2');
+            var btn3 = document.getElementById('btn3');
+            var btn4 = document.getElementById('btn4');
+            var box = document.getElementById('box');
+            var box2 = document.getElementById('box2');
+            var timer
+
+            btn.onclick = function () {
+                work(box, 800, 1, 'left');
+            }
+
+            btn2.onclick = function () {
+                work(box, 200, 1, 'left');
+            }
+            btn3.onclick = function () {
+                work(box2, 800, 1, 'left');
+            }
+            btn4.onclick = function () {
+                work(box2, 800, 10, 'width', function () {
+                    work(box2, 200, 10, 'height', function () {
+                    });
+                });
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btn">点我往右走</button>
+    <button id="btn2">点我往左走</button>
+    <button id="btn3">点我黄盒子移动</button>
+    <button id="btn4">测试</button>
+    <br><br>
+    <div id="box"></div>
+    <div id="box2"></div>
+    <div id="line"></div>
+</body>
+
+</html>

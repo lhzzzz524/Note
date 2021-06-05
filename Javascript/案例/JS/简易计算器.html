@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function jiafa(a, b) {
+            var s = a + b;
+            alert('和为' + s);
+        }
+        function jianfa(a, b) {
+            var jian = a - b;
+            return jian;
+        }
+        function chengfa(a, b) {
+            var cheng = a * b;
+            alert('相乘为' + cheng);
+        }
+        function chufa(a, b) {
+            var chu = a / b;
+            alert('相除为' + chu);
+        }
+
+        while (true) {
+            var choice = prompt('欢迎使用简易计算器' + '\n' + '1.加法运算' + '\n' + '2.减法运算' + '\n' + '3.乘法运算' + '\n' + '4.除法运算');
+            switch (choice) {
+                case '1': {
+                    var a = parseInt(prompt('请输入第一个数'));
+                    var b = parseInt(prompt('请输入第二个数'));
+                    jiafa(a, b);
+                    continue;
+                }
+                case '2': {
+                    var a = parseInt(prompt('请输入第一个数'));
+                    var b = parseInt(prompt('请输入第二个数'));
+                    var sum = jianfa(a, b);
+                    alert(sum);
+                    continue;
+                }
+                case '3': {
+                    var a = parseInt(prompt('请输入第一个数'));
+                    var b = parseInt(prompt('请输入第二个数'));
+                    chengfa(a, b);
+                    continue;
+                }
+                case '4': {
+                    var a = parseInt(prompt('请输入第一个数'));
+                    var b = parseInt(prompt('请输入第二个数'));
+                    chufa(a, b);
+                    continue;
+                }
+                default:
+                    alert('输入错误,请输入1-4');
+                    continue;
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

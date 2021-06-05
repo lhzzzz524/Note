@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #but {
+            width: 400px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: rgb(212, 212, 75);
+            text-align: center;
+        }
+
+        #pic {
+            width: 300px;
+            height: 180px;
+            margin: 10px auto;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            //获取两个按钮
+            var pre = document.getElementById('pre');
+            var next = document.getElementById('next');
+
+            //获取图片
+            var img = document.getElementsByTagName('img')[0]; //获取的数组只有一个元素所以设置为0
+
+            //创建一个数组存放图片地址
+            var imgarr = ['../../../images/学成在线/图1.png', '../../../images/学成在线/图2.png', '../../../images/学成在线/图3.png', '../../../images/学成在线/图4.png'];
+
+            //创建一个变量，来保存当前正在显示的图片的索引
+            var index = 0;
+
+            //获取id为info的p元素
+            var write = document.getElementById('info');
+            //设置提示文字
+            write.innerHTML = '一共' + imgarr.length + '张图片,现在第' + (index + 1) + '张图片';
+
+            //为两个按钮添加响应函数
+            pre.onclick = function () {
+
+                //点一下，索引自减，返回上一张图片
+                index--;
+
+                //判断如果到了第一张图片 则返回到最后一张图片 实现循环
+                if (index < 0) {
+                    index = imgarr.length - 1;
+                }
+
+                //要修改图片就是修改它的src属性
+                img.src = imgarr[index];
+
+                //当点击重新设置文字信息
+                write.innerHTML = '一共' + imgarr.length + '张图片,现在第' + (index + 1) + '张图片';
+
+            }
+
+            next.onclick = function () {
+
+                //点一下，索引自加，返回下一张图片
+                index++;
+
+                //判断如果到了最后一张图片 则返回到最后一张图片 实现循环
+                if (index > 3) {
+                    index = 0;
+                }
+
+                //要修改图片就是修改它的src属性
+                img.src = imgarr[index];
+
+                //当点击重新设置文字信息
+                write.innerHTML = '一共' + imgarr.length + '张图片,现在第' + (index + 1) + '张图片';
+
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="but">
+        <p id="info"></p>
+        <div id="pic"><img src="../../../images/学成在线/图1.png" alt="图1"></div>
+        <button id='pre'>上一张</button>
+        <button id='next'>下一张</button>
+    </div>
+</body>
+
+</html>

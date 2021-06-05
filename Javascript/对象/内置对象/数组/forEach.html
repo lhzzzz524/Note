@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr = ['lhz', 'xk', 'wf', 'zyy'];
+        // forEach()方法需要一个函数作为参数 只支持IE8浏览器，IE8及以下不支持该方法
+        // 数组中有几个元素，函数就会执行几次以上面为例就是4次，每次执行时，浏览器就会将遍历到的元素以实参的形式传递进来 我们可以定义形参 来读取这些内容
+
+        // 第一个参数，就是当前正在遍历的元素
+        // 第二个参数，就是当前正在遍历的元素的索引
+        // 第三个参数，就是正在遍历的数组
+        arr.forEach(function (value, index, obj) {
+            //console.log(value);
+            //console.log(index);
+            console.log(obj);
+            console.log(obj == arr);
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //push() unshifit() pop() shift()几个方法都会改变原数组
+
+        //1.push()数组后端插入元素 结果会返回新增元素后的数组的长度
+        var arr = new Array(2, 6, 7, 8);
+        arr.push(2, 10);                             //在数组后面添加元素2与10
+        console.log(arr);
+        console.log(arr.push('吕航哲', '熊科'));     //返回数组长度8
+        console.log(arr);
+
+        //2.unshift() 数组前面插入元素 会返回新增元素后的数组的长度
+        var arra = new Array(2, 3, 4, 5);
+        console.log(arra.unshift(1));                //5
+        console.log(arra);                           //在数组前面添加元素1
+
+        var arr1 = new Array();
+        //3.pop()删除数组最后一个元素 没有参数 会返回数组最后一个元素 
+        //如果数组里没有元素 pop()返回的是undefined
+        var arr = new Array(2, 6, 7, 8);
+        console.log(arr.pop());                      //8
+        console.log(arr);                            //[2.6.7]
+        console.log(arr1.pop());                     //undefined
+
+        //4.shift() 删除数组第一个元素 没有参数 会返回数组第个元素
+        //如果数组里没有元素shift()返回的是undefined
+        var arra = new Array(2, 3, 4, 5);
+        console.log(arra.shift());                    //2
+        console.log(arra);                            //[3,4,5]
+        console.log(arr1.shift());                    //undefined
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
