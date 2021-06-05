@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* P:nth-child(n) 选中p元素,且该p元素必须是某个父元素的第n个子元素 */
+
+        P:nth-child(1) {
+            /*因为第一个div元素中的第一个子元素不是p,所以不会选择第一个div中的p*/
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span>我是span</span>
+        <p>div中第一个段落</p>
+        <p>div中最后一个段落</p>
+    </div>
+    <div>
+        <p>另一个div中的第一个段落</p>
+        <p>另一个div中的最后一个段落</p>
+    </div>
+</body>
+
+</html>

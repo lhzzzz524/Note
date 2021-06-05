@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .one {
+            position: relative;
+            /* 定位模式：相对定位 不会脱表 */
+            /* 新盒子以坐上角向上移动100px向左移动100px到老盒子位置 */
+            top: 100px;
+            left: 200px;
+            width: 300px;
+            height: 200px;
+            background-color: yellow;
+        }
+
+        .two {
+            width: 300px;
+            height: 200px;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="one"></div>
+    <div class="two"></div>
+</body>
+
+</html>

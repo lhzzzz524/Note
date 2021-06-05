@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* div {
+            高宽必须为零
+            width: 0;
+            height: 0;
+             本质每条边都是一个三角形 
+            border-top: 100px solid transparent;
+            border-right: 0 solid blue;
+            border-bottom: 0 solid red;
+            border-left: 50px solid green;
+            margin: 100px auto;
+        } */
+        div {
+            width: 150px;
+            height: 40px;
+            border: 1px solid red;
+            line-height: 40px;
+        }
+
+        .red {
+            position: relative;
+            float: left;
+            width: 70px;
+            height: 40px;
+            background-color: yellow;
+        }
+
+        .tr {
+            width: 70px;
+            height: 40px;
+        }
+
+        div i {
+            position: absolute;
+            right: 0;
+            border-color: transparent red transparent transparent;
+            border-style: solid;
+            border-width: 40px 20px 0 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span class="red">小米手环
+            <i></i>
+        </span>
+
+        <span class="tr">&yen;22156</span>
+
+    </div>
+</body>
+
+</html>

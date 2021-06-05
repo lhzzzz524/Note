@@ -1,0 +1,53 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+li {
+    list-style: none;
+}
+.taobao {
+    position:relative;    
+    width: 520px;
+    height: 280px;
+    margin: 100px auto;
+}
+/* 并集选择器 */
+.taobao .left,.right{
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    width: 20px;
+    height: 30px;
+    background: rgba(0, 0, 0, .2);
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    line-height: 30px;
+}
+.taobao .left{
+    left: 0;
+    border-radius: 0 15px 15px 0;
+}
+.taobao .right{
+    right: 0;
+    border-radius:15px 0 0 15px;
+}
+.taobao ul {
+    position: absolute;
+    bottom: 15px;;
+    left: 50%;
+    margin-left: -35px;
+    width: 70px;
+    height: 13px;
+    border-radius: 10px;    
+    background-color:rgba(255, 255, 255, .5);
+}
+.taobao ul li {
+    float:left;
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    /* 小圆点 */
+    border-radius: 50%;
+    margin: 3px;
+}

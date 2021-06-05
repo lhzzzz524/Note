@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .box在这里称为多类名，可以把一些标签元素相同的样式放到同一个类里面，从节省代码方便更改 */
+        .box{
+            width: 100px;
+            height: 100px; 
+        }
+
+        /* 类选择器，通常使用最多 */
+        .red {
+            background-color: red;
+        }
+        .green {
+            background-color: green;
+        }
+
+        /* id选择器以类名以#开头，结构用id，只能一次 一般搭配js使用*/
+        #pink {
+            color: pink;
+        }
+
+        /* 通配符选择器 自动给所有元素使用所有样式，这个页面无用*/
+        * {
+            color: red;
+        } 
+    </style>
+</head>
+<body>
+    <div class="box red"></div>
+    <div class="box green"></div>
+    <div class="box red"></div>
+    <div id="pink">颜色</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 权重为10 */
+        input[type] {
+            color: blue;
+        }
+
+        /* 权重为10 */
+        input[type=email] {
+            color: yellow;
+        }
+
+        /* 权重为10 */
+        input[type^=u] {
+            color: red;
+        }
+
+        /* 权重为1 1 */
+        body input[type=text] {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text">
+    <input type="email">
+    <input type="text">
+    <input type="url">
+    <input type="text">
+</body>
+
+</html>

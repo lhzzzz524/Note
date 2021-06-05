@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            /* 行内元素设置绝对或固定定位或浮动可以直接设置高度 */
+            position: absolute;
+            width: 500px;
+            height: 400px;
+            background-color: yellow;
+            /* 设置宽度为父盒子的一半 */
+            left: 50%;
+            /* 再设置为自身宽度的一半 */
+            margin-left: -250px;
+            /* 设置高度为父盒子的一半 */
+            top: 50%;
+            /* 再设置为自身高度的一半 */
+            margin-top: -200px;
+        }
+
+        div {
+            position: absolute;
+            /* 块级元素添加固定或绝对定位，不给高宽度，默认大小是内容的大小 */
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <p></p>
+    <div>123465</div>
+</body>
+
+</html>

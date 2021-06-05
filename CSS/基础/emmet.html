@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .one {
+            /* 每个单词首字母简写 */
+            text-align: center;
+            text-indent: 2em;
+            text-decoration: none;
+            width: 100px;
+            height: 20px;
+            line-height: 26px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- div*3 -->
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <!-- ul>li -->父子级
+    <ul>
+        <li></li>
+    </ul>
+
+    <!-- div+p -->同级
+    <div></div>
+    <p></p>
+
+    <!-- .demo生成calls类 #demo生成id 默认div标签-->
+    <div class="demo"></div>
+
+    <!-- ul>li.demo .demo在那个后面就在哪里生成 -->
+    <ul class="demo">
+        <li></li>
+    </ul>
+
+    <!-- $自增符号生成有顺序的类名.demo$*5 *相当于生成几个-->
+    <div class="demo1"></div>
+    <div class="demo2"></div>
+    <div class="demo3"></div>
+    <div class="demo4"></div>
+    <div class="demo5"></div>
+
+    <!-- 生成的标签里默认显示几个文字div {} -->
+    <div>你算什么男人</div>
+
+    <!-- div{$}*3 -->
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</body>
+
+</html>

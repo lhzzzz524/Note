@@ -1,0 +1,33 @@
+1. 定位
+固定定位：会脱离标准流 不占用原来位置
+绝对定位：会脱离标准流 不占用原来位置
+相对定位：不会脱离标准里 占用原来位置
+
+2. display：none visibility：hidedn overflow:hidden
+display：none:隐藏元素时不会占用原来的位置
+visibility：hidedn：隐藏元素时会占用原来位置
+overflow:hidden :溢出隐藏
+
+3.CSS盒子模型与IE盒子模型区别 
+CSS盒子模型：盒子的宽度 = border*2+padding*2+内容区
+CSS盒子模型：内容区的宽度 = width
+IE盒子模型：盒子的宽度 = width(包含了border*2+padding*2)
+IE盒子模型：内容区的宽度 = width - padding*2 - border*2
+
+假如一个盒子的width：100px  height：100px  padding：10px  border：10px
+CSS盒子模型：盒子的宽度 = 100px + padding*2 + border*2 = 140px
+CSS盒子模型：内容区的宽度 = width
+IE盒子模型：盒子的宽度 = 100px
+IE盒子模型：内容区的宽度 = 100px - padding*2 - border*2 = 60px
+
+4.盒子塌陷造成的原因
+    当父元素没设置足够大小的时候，而子元素设置了浮动的属性，子元素就会跳出父元素的边界（脱离文档流），尤其是当父元素的
+高度为auto时，而父元素中又没有其它非浮动的可见元素时，父盒子的高度就会直接塌陷为零， 我们称这是CSS高度塌陷。
+
+解决方法：
+1)直接为父盒子设置固定宽度与高度                         不推荐这样 窗口大小会固定
+2)在父盒子的最下面添加一个专门清除浮动的标签              不推荐这样 会增加页面元素
+3)为父盒子添加overflow:hidden或者overflow:auto          不推荐这样 overflow:hidden 可能会带来溢出内容不可见  overflow:auto 可能会出现滚动条
+4)给父盒子也设置浮动，让其也脱离标准文档流                不推荐这样 对页面的布局不是很友好，不易维护
+5)给父盒子设置伪元素after清除浮动                        推荐使用
+6)给父盒子设置双伪元素after before清除浮动               可以使用

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-size: 16px;
+        }
+
+        /* 标题需要手动更改 */
+        h2 {
+            font-size: 30px;
+        }
+
+        /* 400 等同于 normal默认，而 700 等同于 bold加粗 */
+        .bold {
+            font-weight: 700;
+        }
+
+        /* 字体复合属性 */
+        p {
+            /* 必须按照font: font-style样式 font-weight粗细 font-size字号 font-family字体顺序书写 不需要设置的可以省略 但必须保留font-size和font-family*/
+            font: italic 700 16px '黑体';
+        }
+
+        .color {
+            color: #cc00ff;
+        }
+
+        /* 右对齐right 左对齐left 居中center */
+        .align {
+            text-align: center;
+        }
+
+        /* none默认 underline下划线 overline上划线 line-through删除线 */
+        .line {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>苏喂苏喂苏喂</h2>
+    <p>那一抹众人中最漂亮的颜色，</p>
+    <p class="line">优雅，淡然，又那么清澈</p>
+    <p class="color align">前端总是伴随着困难和犯错</p>
+    <p>静心，坦然，攻克一个又一个</p>
+    <p class="bold">拼死也要克服</p>
+    <p>一定学成功</p>
+</body>
+
+</html>

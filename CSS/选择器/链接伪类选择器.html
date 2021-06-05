@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 必须遵循这个顺序 
+         未访问过的链接a:link把没有点击过的链接选出来 
+        a:link {
+            color: black;
+            text-decoration: none;
+        }
+
+         已被访问过的链接 
+        a:visited {
+            color: yellow
+        }
+
+         鼠标位于链接上 
+        a:hover {
+            color: blue;
+        }
+
+        a:active {
+            color: green
+        }
+        */
+        /* 实际开发中 */
+        a {
+            /* 平时链接状态 */
+            color: #333;
+            text-decoration: none;
+        }
+
+        a:hover {
+            /* 鼠标经过的状态 */
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="https://pvp.qq.com/" target="blank">王者荣耀</a>
+    <a href="https://qq.com/" target="blank">王者荣耀</a><br>
+    <a href="https://lol.qq.com/" target="blank">lol</a>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+1.icomoon-选择-font-Download-解压缩
+2.把fonts复制到heml页面的根目录下
+3.复制字体申明到style
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?1q1a1o');
+  src:  url('fonts/icomoon.eot?1q1a1o#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?1q1a1o') format('truetype'),
+    url('fonts/icomoon.woff?1q1a1o') format('woff'),
+    url('fonts/icomoon.svg?1q1a1o#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+4.打开解压缩文件里的demo.html,选择自己想要的字体图标后的小长方形
+5.给字体图标标签更改样式为font-family: 'icomoon';

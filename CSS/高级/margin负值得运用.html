@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 1000px;
+            height: 400px;
+            background-color: blue;
+            margin: 100px auto;
+        }
+
+        div ul li {
+            /* position: absolute; */
+            list-style: none;
+            float: left;
+            width: 200px;
+            height: 400px;
+            background-color: yellow;
+            border: 1px solid red;
+            /* 可以使每个盒子衔接得更完美 */
+            margin: -1px;
+        }
+
+        /* 如果父盒子没有定位的话可以使用相对定位 */
+        /* div ul li:hover {
+            position: relative;
+            border: 1px solid black;
+        } */
+
+        div ul li:hover {
+            /* 如果父盒子有定位，设置z-index就可以 */
+            z-index: 1;
+            position: relative;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+</body>
+
+</html>

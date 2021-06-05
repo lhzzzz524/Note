@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 塌陷的情况:
+            两个盒子呈嵌套关系，对子盒子设置 margin-top时父盒子会随着子盒子同时下移，并且 margin-top看不到效果。
+            
+            解决方法一:
+            给父盒子设置边框padding-top 清除margin-top;
+         */
+        .fat {
+            width: 799px;
+            height: 400px;
+            background-color: yellow;
+            padding-top: 100px;
+        }
+
+        .son {
+            width: 400px;
+            height: 200px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fat">
+        <div class="son"></div>
+    </div>
+</body>
+
+</html>

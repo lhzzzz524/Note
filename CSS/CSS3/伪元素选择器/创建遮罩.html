@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: relative;
+            width: 300px;
+            height: 400px;
+            margin: 100px auto;
+        }
+
+        div img {
+            width: 100%;
+            height: 100%;
+        }
+
+        div::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4) url(../../../images/arr.png) no-repeat center;
+        }
+
+        div:hover::after {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="../../../images/吸尘器.jpg" alt="">
+    </div>
+</body>
+
+</html>

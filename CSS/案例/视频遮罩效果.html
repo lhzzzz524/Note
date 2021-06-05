@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            width: 380px;
+            height: 450px;
+            background-color: yellow;
+            margin: 50px auto;
+        }
+
+        .box img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .box .zhezhao {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .4) url(../../images/arr.png) no-repeat center;
+        }
+
+        /* 当点击这个盒子的时候，遮罩就会显示出来 */
+        .box:hover .zhezhao {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="../../images/时间.png" alt="">
+        <div class="zhezhao"></div>
+    </div>
+</body>
+
+</html>

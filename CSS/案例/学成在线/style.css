@@ -1,0 +1,310 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.w {
+    width: 1200px;
+    margin: auto;
+}
+body {
+    background-color:#f3f5f7;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.header {
+    height: 42px;
+    margin: 0 top;
+    margin: 30px auto;
+} 
+.logo{
+    float: left;
+    width: 196px;
+    height: 42px;
+}
+.nav {
+    float: left;
+    margin-left: 70px;
+}
+.nav ul li{
+    float: left;
+    margin: 0 15px;
+}
+.nav ul li a {
+    display: block ;
+    height: 42px;
+    padding: 0 10px;
+    color: #050505;
+    font-size: 18px;
+    line-height: 42px;
+} 
+.nav ul li a:hover {
+    border-bottom:2px solid #00a4ff ;
+    color: #00a4ff;
+}
+.search{
+    width: 450px;
+    height: 42px;
+    float: left;
+    margin-left: 50px;
+}
+.search input{
+    float: left;
+    width: 339px;
+    height: 40px;
+    /* border会撑大边框 所以width相应减去border两倍 */
+    border: 1px solid #00a4ff;
+    border-right: 0px;
+    font-size: 14px;
+    color: #bfbfbf;
+    /* padding也会撑大边框,要减去宽度 */
+    padding-left: 20px;
+}
+.search button{
+    width: 50px;
+    height: 42px;
+    background-image: url(../../../images/学成在线/fa-search.png);
+    border: 0px;
+    /* input bottom都属于行内块元素，所以他们中间会有空隙，两个标签都设置浮动即可 */
+    float: left;
+}
+.qq{
+    float: right;
+    padding-right: 50px;
+    font-size: 14px;
+    color: #666;
+    margin: 5px auto;
+}
+.banner{
+    height: 421px;
+    background-color:#1c036c;
+}
+.banner .w{
+    height: 421px;
+    background: url(../../../images/学成在线/banner2.png) no-repeat top center;
+}
+.subnav{
+    float: left;
+    width: 190px;
+    height: 421px;
+    background:rgba(0,0,0,0.3);
+}
+.subnav ul li a{
+    height: 46.8px;
+    line-height: 46.8px;
+    display: block;
+    padding:0 20px;
+    color: white;
+    font-size: 14px;
+}
+
+.subnav ul li a:hover{
+    color: #00b4ff;
+    background:rgba(0, 179, 255,.3);
+}
+.subnav ul li span{
+    float: right;
+}
+.course{
+    width: 230px;
+    height: 300px;
+    float: right;
+    background-color:white;
+    /* 浮动的盒子不会有塌陷的问题 */
+    margin-top: 60px;
+}
+.course h2{
+    text-align: center;
+    height: 48px;
+    line-height: 48px;
+    background-color: #9bceea;
+    font-size: 18px;
+    color: white;
+    /* 字符间距 */
+    letter-spacing: 3px;
+}
+.bd{
+    padding:0 20px;
+}
+.bd ul li h4{
+    font-size: 16px;
+    color:#5a5a5a;
+}
+.bd ul li p {
+    font-size: 12px;
+    color: #a5a5a5;
+}
+.bd ul li {
+    padding: 14px 0;
+    border-bottom:1px  solid #a5a5a5;
+}
+.bd ul a {
+    height: 40px;
+    display: block;
+    margin:6px  0;
+    border: 1px solid #00a4ff;
+    text-align: center;
+    line-height: 40px;
+    font-weight: 700;
+    color: #00a4ff;
+}
+.goods {
+    height: 60px;
+    background-color: white;
+    /* 盒子阴影 */
+    box-shadow:-1px 2px 9px -1px rgba(0,0,0,0.3);
+    margin-top :8px;
+    /* 行高会继承 */
+    line-height: 60px;
+}
+.goods h3 a {
+    float: left;
+    font-size: 16px;
+    color: #00a4ff;
+    padding:0 30px;
+    font-weight: 400;
+    border: 1px solid yellow;
+}
+.goods ul {
+    float: left;
+}
+.goods ul li {
+    float: left;
+}
+.goods ul li a {
+    padding: 0 30px;
+    border-left: 1px solid #5a5a5a;
+    font-size: 16px;
+}
+.goods .right {
+    float: right;
+    font-size: 14px;
+    color: #00a4ff;
+    margin-right:30px;
+}
+.box {
+    margin-top: 30px;
+}
+.box-hd {
+    height: 45px;
+}
+.box-hd h4{
+    float: left;
+    font-size: 20px;
+    color: #494949;
+    font-weight: 400;
+    
+}
+.box-hd a{
+    float: right;
+    font-size: 12px;
+    color: #4f4f4f;
+    margin-right: 30px;
+    margin-top: 5px;
+}
+.box-bd {
+    height: 557px;
+}
+.box-bd ul li {
+    position: relative;
+    width: 228px;
+    height: 270px;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+/* 设置li的父亲ul的宽度 以致放的下五个盒子 */
+.box-bd ul{
+    width: 1225px;
+}
+.box-bd ul li em {
+    position: absolute;
+    right: -4px;
+    top: 4px;
+}
+/* 和父亲一样宽度 */
+.box-bd ul li>img {
+    width: 100%;
+}
+.box-bd ul li h4 {
+    /* padding: 25px 23px; */
+    margin: 25px 20px 0 23px;
+    color: #050505;
+    font-size: 14px;
+    font-weight: 400;
+}
+.box-bd ul li p {
+    margin: 20px 20px 0 23px;
+    font-size: 12px;
+    color: #999;
+}
+.box-bd ul li:hover{
+    box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, .3);
+}
+.fotter{
+    height: 415px;
+    background-color:#ffffff;
+    margin-top: 40px;
+}
+.copyright {
+    float: left;
+    margin-top:32px ;
+}
+.copyright p {
+    margin-top: 25px;
+}
+.fotter a{
+    width: 120px;
+    height: 35px;
+    margin-top: 17px;
+    display: block;
+    border: 1px #00a4ff solid;
+    color: #00a4ff;
+    font-size: 16px;
+    line-height: 35px;
+    text-align: center;
+}
+.fotter p {
+    font-size: 12px;
+}
+.fotter span {
+    font-size: 12px;
+}
+.links {
+    float: right;
+    margin-top:32px ;
+}
+.links .one {
+    float: right;
+    margin-right: 30px;
+}
+.links .two {
+    float: right;
+    margin-right: 128px;
+}.links .three {
+    float: right;
+    margin-right: 146px;
+}
+.links ul {
+    margin-top: 15px;
+}
+.links .one h7 {
+    font-size: 16px;
+    font-weight: 400;
+}
+.links .two h7 {
+    font-size: 16px;
+    font-weight: 400;
+}.links .three h7 {
+    font-size: 16px;
+    font-weight: 400;
+}
+.links ul li {
+    font-size: 12px;
+}
+
+
+
