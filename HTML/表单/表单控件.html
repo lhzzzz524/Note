@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <!-- <label>用于绑定一个表单元素，当点击<label>标签内的文本时，浏览器会自动将光标转到或选择对应的表单元素上，增加用户体验 -->
+        <label for="text">用户名:</label> <input type="text" name="username" id="text"> <br>
+        密码：<input type="password" name="pwd"><br>
+
+        <!-- 单选框radio -->
+        <!-- name是表单元素名字 这里性别单选按钮必须有相同的名字name 才可以实现多选以 -->
+        性别：<label for="man">男</label><input type="radio" name="sex" checked="checked" id="man">
+        <label for="women">女</label><input type="radio" name="sex" id="women"><br>
+
+        <!-- 复选框checkbox -->
+        爱好:吃饭<input type="checkbox" name="hobby"> 睡觉<input type="checkbox" name="hobby"> 玩游戏<input type="checkbox"
+            name="hobby"><br>
+
+        <!-- 点击了提交按钮可以把表单域form里面的表单元素里面的值提交给后台服务器 -->
+        <input type="submit" value="免费注册">
+        <input type="reset" value="重置"><br>
+
+        <!-- <select>下拉列表 -->
+        籍贯：
+        <select>
+            <option>山东</option>
+            <option>湖北</option>
+            <option>北京</option>
+            <option>新疆</option>
+            <option>上西</option>
+        </select><br>
+
+        <!-- <textarea>可以输入多个文字，像留言板等等 -->
+        <!-- cols每行显示多少个字符 rows一共多少行,可以自动增加 -->
+        网站介绍：<textarea cols="50" rows="5">在此输入</textarea>
+    </form>
+</body>
+
+</html>

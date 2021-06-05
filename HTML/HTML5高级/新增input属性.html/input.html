@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style: none;
+            text-align: center;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <ul>
+            <!-- required 该属性表示其内容不能为空 -->
+            <li> <input type="email" required="required">邮箱</li>
+
+            <!-- placeholder 表单的提示信息 存在默认值就不再显示 -->
+            <li> <input type="url" placeholder="必填">网址</li>
+            <li> <input type="date">日期</li>
+            <li> <input type="time">时间</li>
+            <li> <input type="month">月</li>
+            <li> <input type="week">周</li>
+            <li> <input type="number">数字</li>
+            <li> <input type="tel">手机号码</li>
+
+            <!-- autofocus 光标自动对焦拥有该属性的表单 -->
+            <!-- autocomplete="on"如果表单键入成功 并且有name值 就会保留键入过的值 但为了隐私起见 一般设置为off关闭 -->
+            <li> <input type="search" autofocus="autofocus" autocomplete="on" name="font">搜索框</li>
+
+            <li> <input type="color">生成颜色表单</li>
+            <input type="submit"><br>
+
+            <!-- 默认选择文件只能选一个 multiple属性能同时选择多个 -->
+            <input type="file" multiple="multiple">
+        </ul>
+    </form>
+</body>
+
+</html>
