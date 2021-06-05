@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            var box = document.getElementById('box');
+            var sudu = 10;
+            var direction = 0;
+            document.onkeydown = function (event) {
+                event = event || window.event;
+                direction = event.keyCode;
+                //按ctrl加快速度
+                if (event.ctrlKey) {
+                    sudu = 100;
+                }
+            }
+            //每平移一下需要25毫秒
+            setInterval(function () {
+                //键盘的方向键左上右下分别对应的是37 38 39 40
+                if (direction === 37) {
+                    box.style.left = (box.offsetLeft - sudu) + 'px';
+                }
+                if (direction === 38) {
+                    box.style.top = (box.offsetTop - sudu) + 'px';
+                }
+                if (direction === 39) {
+                    box.style.left = (box.offsetLeft + sudu) + 'px';
+                }
+                if (direction === 40) {
+                    box.style.top = (box.offsetTop + sudu) + 'px';
+                }
+            }, 25)
+
+            document.onkeyup = function () {
+                //按键松下赋值direction为0使其停止
+                direction = 0;
+                //按下ctrl重新赋值 以免速度一直使100
+                sudu = 10;
+            }
+            //用定时器控制速度 函数里判断方向
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box"></div>
+</body>
+
+</html>

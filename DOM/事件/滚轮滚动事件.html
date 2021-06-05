@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+    <!-- 滚轮向下滚动box的height增加 向上滚动box的height减少 -->
+    <script>
+        window.onload = function () {
+            var box = document.getElementById('box');
+            // *onmousewheel 火狐不支持该事件 火狐中需要DOMMouseScroll来绑定 该事件要通过addEventListener()来绑定
+            box.onmousewheel = function (event) {
+                event = event || window.event;
+                /*
+                判断滚轮滚动的方向：
+                  *wheelDelta这个值只看正负，不看数值 向下滚动是正值，向上滚动是负值 但是火狐又不能兼容
+                  alert(event.wheelDelta);
+                  *火狐里使用detail 这个向上滚动时正值，向下滚动是负值
+                  alert(event.detail);
+                */
+                if (event.wheelDelta < 0 || event.detail > 0) {
+                    box.style.height = box.clientHeight + 10 + 'px';
+                } else {
+                    box.style.height = box.clientHeight - 10 + 'px';
+                }
+                /*
+                 当滚轮滚动时，如果浏览器有滚动条，滚动条会随之滚动 是浏览器的默认行为 取消默认行为使用return false;
+                 *当使用addEventListener()方法绑定事件时，想要取消默认行为 不能使用return false 使用event.preventDefault();
+                 */
+                event.preventDefault && event.preventDefault();
+                return false;
+            }
+
+            //*给火狐绑定事件
+            bind(box, 'DOMMouseScroll', box.onmousewheel);
+
+
+
+            function bind(obj, eventStr, callback) {
+                if (obj.addEventListener) {
+                    obj.addEventListener(eventStr, callback, false);
+                } else {
+                    obj.attachEvent('on' + eventStr, function () {
+                        callback.call(obj);
+                    });
+                }
+            }
+
+
+        };
+    </script>
+</head>
+
+<body style="height: 2000px;">
+    <div id="box"></div>
+</body>
+
+</html>

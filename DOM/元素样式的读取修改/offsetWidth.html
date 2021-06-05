@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            position: absolute;
+            left: 20px;
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            background-color: red;
+            border-top: 10px solid yellow;
+            border-left: 5px solid green;
+        }
+
+        #mall_box {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            background-color: blue;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var box = document.getElementById('box');
+            var mallbox = document.getElementById('mall_box');
+            var btn = document.getElementById('btn');
+            btn.onclick = function () {
+                /*
+                 获取元素的整个宽度和高度，包括内容区与内外边框距离 返回的也是一个数字 
+                 offsetWidth = width + 左右padding + 左右boder
+                 offsetHeith = height + 上下padding + 上下boder
+                 offsetTop：当前元素 上边框 外边缘 到 最近的已定位父级offsetParent上边框内边缘的距离。如果父
+                 级都没有定位，则分别是到body 顶部 和左边的距离
+                 offsetLeft：当前元素 左边框 外边缘 到 最近的已定位父级offsetParent左边框内边缘的距离。
+                 如果父级都没有定位，则分别是到body顶部和左边的距离
+                */
+                //alert(box.offsetWidth); 120
+                alert(box.offsetHeight); 120
+                //alert(box.offsetTop); 0
+                //alert(box.offsetLeft);
+
+                //offsetParent 用来获取当前元素的最近定位父元素 没有则返回body
+                alert(box.offsetParent.id); //mall_box
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="mall_box">
+        <div id="box"></div>
+    </div>
+    <button id='btn'>点我</button>
+</body>
+
+</html>

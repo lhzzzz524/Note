@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            //1.getElementsByClassName 根据类名获得某些元素集合 ieb8及以下不支持
+            var boxs = document.getElementsByClassName('box');
+            console.log(boxs);
+
+            //2.querySelector 返回指定选择器的第一个元素对象 里面的选择器需要根据类型加符号 .box #name
+            var firstbox = document.querySelector('.box');
+            console.log(firstbox);
+            var navs = document.querySelector('#nav');
+            console.log(navs);
+
+            //3.querySelectorAll() 返回指定选择器的所有元素对象集合
+            var allbox = document.querySelectorAll('.box');
+            console.log(allbox);
+            console.log(typeof allbox);
+            var lis = document.querySelectorAll('li');
+            console.log(lis);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="box">123</div>
+    <div class="box">345</div>
+    <div id="nav">
+        <ul>
+            <li>box1</li>
+            <li>box2</li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

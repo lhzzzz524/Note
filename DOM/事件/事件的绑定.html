@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            var but = document.getElementById('but');
+
+            //两个方法又不能兼容所有浏览器 所以自己定义函数
+            function bind(obj, eventStr, callback) {
+                if (obj.addEventListener) {
+                    obj.addEventListener(eventStr, callback, false);
+                } else {
+
+                    /*在IE8里用attachEvent()的this会指向window this的指向是由调用方式决定的 说明在IE8里这个function()这个函数是浏览器调用的
+                    用callback.call(obj)使用call方法可以修改函数的this 自己定义一个匿名函数 让浏览器调用这个匿名函数 再在匿名函数里
+                    调用callback.call(obj)回调函数 这样可以把this的指向指向我们设置的对象*/
+                    obj.attachEvent('on' + eventStr, function () {
+                        callback.call(obj);
+                    });
+                }
+            }
+            bind(but, 'click', function () {
+                alert(this);
+            })
+            /* 
+            使用对象.事件=函数 这样点击按钮弹出总是最后一个设置响应函数的内容
+            but.onclick = function () {
+                alert('123');
+            }
+            but.onclick = function () {
+                alert('243')
+            }
+            */
+
+            /*
+            addEventListener()这个方法也可以绑定响应函数 不支持IE8及以下的浏览器
+            参数1：事件的字符串 不要on
+            参数2：回调函数 当事件被触发时函数会被调用
+            参数3：是否在捕获阶段出发时间 需要一个布尔值，一般false
+            可以同时为一个对象绑定多个相同事件函数 会按顺序执行
+            */
+            /*          
+                but.addEventListener('click', function () {
+                    alert('1');
+                }, false)
+                but.addEventListener('click', function () {
+                    alert('2');
+                }, false)
+                but.addEventListener('click', function () {
+                    alert('3');
+                }, false)
+             */
+
+            /* 
+             attachEvent()方法支持IE8浏览器使用
+             参数1：要on 事件的字符串
+             参数2：回调函数
+            */
+            /*
+            but.attachEvent('onclick', function () {
+                alert('1');
+            })
+            but.attachEvent('onclick', function () {
+                alert('2');
+            })
+            but.attachEvent('onclick', function () {
+                alert('3');
+            })
+             */
+        }
+    </script>
+</head>
+
+<body>
+    <button id="but">点我</button>
+</body>
+
+</html>

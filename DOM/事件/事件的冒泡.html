@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        #green {
+            position: absolute;
+            top: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+
+        }
+
+        span {
+            background-color: yellow;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            /*
+             事件冒泡：
+                是指事件的向上传导，当后代元素事件被触发时，祖先元素相同的事件会被触发
+                冒泡一般是有用 如果需要取消 则需要事件对象里的cancelBubble属性设置为true
+             */
+            var div = document.getElementById('div');
+            var span = document.getElementById('span');
+            var body = document.body;
+            div.onclick = function () {
+                alert('我是div');
+            }
+
+            span.onclick = function () {
+                alert('我是span');
+            }
+
+            body.onclick = function () {
+                alert('我是body');
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="div">
+        我是div
+        <div id="green">
+            我是div2
+        </div>
+        <span id="span">我是span</span>
+    </div>
+</body>
+
+</html>

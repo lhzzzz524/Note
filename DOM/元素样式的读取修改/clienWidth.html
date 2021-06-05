@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            padding: 10px;
+            border-top: 10px solid yellow;
+            border-left: 5px solid green;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var box = document.getElementById('box');
+            var btn = document.getElementById('btn');
+            btn.onclick = function () {
+                /*
+                 clientWidth clientHeight两个属性分别获取可见宽度和高度包括内容区和内边距 
+                 因为设置padding值 盒子会被撑大 可见内容也随之变大
+                 这两个属性返回的都是不带px 返回的是一个数字
+                 都是只读的，不能修改
+                 clientWidth = width+左右padding
+                 clientHeigh = height + 上下padding 
+                 clientTop = boder.top(上边框的宽度)
+                 clientLeft = boder.left(左边框的宽度)
+
+                 */
+                alert(box.clientWidth); 120
+                //alert(box.clientHeight); 120
+                //alert(box.clientTop); 10
+                //alert(box.clientLeft); 5
+
+
+                /*
+                 获取元素的整个宽度和高度，包括内容区与内外边框距离 返回的也是一个数字 
+                 */
+                //alert(box.offsetWidth);//120
+                //alert(box.offsetHeight);//120
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box"></div>
+    <button id='btn'>点我</button>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<body>
+    <!-- selected规定选项（在首次显示在列表中时）表现为选中状态。 -->
+
+    故乡：<select id="city">
+        <option value="重庆">重庆</option>
+        <option value="北京">北京</option>
+        <option value="武汉">武汉</option>
+        <option value="上海" selected>上海</option>
+    </select>
+    <button id="select-btn">获取选中的城市</button>
+
+    <script>
+        var btn = document.getElementById('select-btn');
+
+        btn.onclick = function () {
+            //获取下拉菜单里的武汉
+            var wuhan = document.getElementById('city');
+            for (var i = 0; i < wuhan.children.length; i++) {
+                //设置点击时 跳转到武汉
+                if (wuhan.children[i].value == '武汉') {
+                    wuhan.children[i].selected = true;
+                };
+            }
+        }
+    </script>
+</body>

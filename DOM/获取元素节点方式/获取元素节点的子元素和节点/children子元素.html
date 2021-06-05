@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        div {
+            width: 312px;
+            height: 500px;
+            margin: 10px auto;
+            text-align: center;
+        }
+
+        #city li {
+            float: left;
+            width: 67px;
+            height: 25px;
+            margin-right: 5px;
+            text-align: center;
+            border: 3px solid red;
+        }
+
+        #game li {
+            float: left;
+            width: 67px;
+            height: 25px;
+            margin-right: 5px;
+            text-align: center;
+            border: 3px solid red;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            var btn = document.getElementById('btn');
+            btn.onclick = function () {
+                var game = document.getElementById('game');
+                var games = game.children;
+                for (var i = 0; i < games.length; i++) {
+                    alert(games[i].innerHTML);
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <ul id="city">
+            <li>北京</li>
+            <li>上海</li>
+            <li>东京</li>
+            <li>首尔</li>
+        </ul><br><br>
+        <ul id="game">
+            <li>穿越火线</li>
+            <li>英雄联盟</li>
+            <li>王者荣耀</li>
+            <li>炉石传说</li>
+        </ul>
+        <br><br>
+        <button id="btn">查找#game下所有子元素</button>
+    </div>
+</body>
+
+</html>

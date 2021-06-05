@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        div {
+            width: 312px;
+            margin: 10px auto;
+            text-align: center;
+        }
+
+        #one {
+            position: fixed;
+            top: 5%;
+            left: 60%;
+        }
+
+        #city li {
+            float: left;
+            width: 67px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            border: 3px solid red;
+        }
+    </style>
+
+
+    <script>
+        window.onload = function () {
+
+            var btn = document.getElementById('btn');
+            btn.onclick = function () {
+                var li = document.createElement('li');
+
+                var gzText = document.createTextNode('广州');
+
+                li.appendChild(gzText);
+
+                var city = document.getElementById('city');
+
+                var dj = document.getElementById('dj');
+
+                //语法：父节点.replaceChild(新节点,旧节点);
+                city.replaceChild(li, dj);
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <ul id="city">
+            <li>北京</li>
+            <li id="sh">上海</li>
+            <li id="dj">东京</li>
+            <li>首尔</li>
+        </ul>
+    </div>
+    <div id="one">
+        <button id="btn">广州替换东京</button>
+    </div>
+</body>
+
+</html>

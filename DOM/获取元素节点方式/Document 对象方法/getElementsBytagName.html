@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            var lis = document.getElementsByTagName('li'); //返回整个页面中为li对象的集合
+            console.log(lis);//返回的是一个伪数组，即使只有一个元素对象
+            for (var i = 0; i < lis.length; i++) {
+                console.log(lis[i]);
+            }
+
+            //这种形式比较麻烦
+            var ol = document.getElementsByTagName('ol'); ////返回整个页面中为ol对象的集合
+            console.log(ol[0].getElementsByTagName('li'));
+            for (var i = 0; i < ol.length; i++) {
+                console.log(ol[i]);
+            }
+
+            //给需要操作的对象给定一个id
+            var ols = document.getElementById('ols');
+            console.log(ols.getElementsByTagName('li'));
+        }
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li>2021-5-5</li>
+        <li>2021-5-6</li>
+        <li>2021-5-7</li>
+    </ul>
+    <ol id='ols'>
+        <li>2000-1-4</li>
+        <li>2000-1-4</li>
+    </ol>
+</body>
+
+</html>

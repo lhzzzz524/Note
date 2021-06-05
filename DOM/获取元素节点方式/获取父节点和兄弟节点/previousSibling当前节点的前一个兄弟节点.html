@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        div {
+            width: 312px;
+            height: 500px;
+            margin: 10px auto;
+            text-align: center;
+        }
+
+        #city li {
+            float: left;
+            width: 67px;
+            height: 25px;
+            margin-right: 5px;
+            text-align: center;
+            border: 3px solid red;
+        }
+
+        #game li {
+            float: left;
+            width: 67px;
+            height: 25px;
+            margin-right: 5px;
+            text-align: center;
+            border: 3px solid red;
+        }
+    </style>
+
+    <script>
+        function myclick(idstr, fun) {
+            var btns = document.getElementById(idstr);
+            btns.onclick = fun;
+        }
+
+        window.onload = function () {
+
+            myclick('btn', function () {
+                var sh = document.getElementById('sh');
+
+                //previousSibling这个属性会返回文本节点
+                var prebrother = sh.previousSibling;
+                console.log(prebrother);//#text 因为前一个节点（包含文本节点）为空白节点所以返回#text
+
+                //previousElementSibling这个属性返回上一个兄弟元素 但是不支持ie8及以下 所以不常用
+                var prebrother2 = prebrother.previousElementSibling;
+                alert(prebrother2.innerHTML); //北京 
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <ul id="city">
+            <li id="bj">北京</li>
+            <li id='sh'>上海</li>
+            <li>东京</li>
+            <li>首尔</li>
+        </ul><br><br>
+        <ul id="game">
+            <li>穿越火线</li>
+            <li>英雄联盟</li>
+            <li>王者荣耀</li>
+            <li>炉石传说</li>
+        </ul>
+        <button id="btn">返回#bj的父节点</button>
+    </div>
+</body>
+
+</html>

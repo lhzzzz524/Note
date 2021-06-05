@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            height: 100px;
+            background-color: yellow;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            var but = document.getElementById('but');
+            var box1 = document.getElementById('box1');
+            but.onclick = function () {
+                //自定义一个函数来保证所有浏览器能够同时读取样式
+                function getStyle(elements, style) {
+                    //IE浏览器支持使用
+                    //return elements.currentStyle[style];
+                    //除IE8的其他浏览器能够使用 第二个参数不是必须的，当不查询伪类元素的时候可以忽略或者传入 null。
+                    //return getComputedStyle(elements, null)[style];
+
+                    /* 
+                        判断一个浏览器里是否有getComputedStyle()方法 有就是除IE浏览器使用
+                       *但是这种写法IE8浏览器也不能使用 因为getComputedStyle是在函数作用域里 会先在函数作用域里找 
+                       函数里没有 再去全局作用域找也没有找不到getComputedStyle 就报错 下面的代码也就不会执行了 
+                    
+                    if (getComputedStyle) {
+                        return getComputedStyle(elements, null)[style];
+                    } else {
+                        return elements.currentStyle[style];
+                    }
+                    */
+
+                    //因为getCoputedStyle是在window里 所以是window对象的属性 所以可以使用window.getComputedStyle
+                    //注意区别一个getCoputedStyle是变量 如果在作用域都找不到会报错 如果作为一个属性报错 则只会undefined 与上面区分
+                    if (window.getComputedStyle) {
+                        return getComputedStyle(elements, null)[style];
+                    } else {
+                        return elements.currentStyle[style];
+                    }
+                }
+                alert(getStyle(box1, 'width'));
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button id='but'>点我一下试试</button>
+    <br><br>
+    <div id="box1" style="background: red;"></div>
+</body>
+
+</html>

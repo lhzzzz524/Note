@@ -1,0 +1,12 @@
+<body>
+    <input type="radio"> 男
+    <input type="radio" id="sex"> 女
+    <input type="radio"> 未知
+    <script>
+        var sex = document.getElementById("sex");
+        // 设置性别“女”不能被选中
+        sex.disabled = true;
+        // 获取性别“女”的状态
+        console.log(sex.disabled)
+    </script>
+</body>

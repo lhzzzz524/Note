@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 200px;
+            height: 300px;
+            background-color: red;
+            overflow: auto;
+        }
+
+        #box2 {
+            width: 400px;
+            height: 600px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var box1 = document.getElementById('box1');
+            var box2 = document.getElementById('box2');
+            var but = document.getElementById('but');
+            but.onclick = function () {
+                //scrollHeight 内容可视区域的高度加上溢出（滚动）的距离。
+                //alert(box2.scrollWidth)//400
+                //alert(box2.scrollHeight)//600
+
+                //获取水平 垂直滚动条滚动的距离
+                //alert(box1.scrollLeft);
+                alert(box1.scrollTop);
+
+                //alert(box2.scrollHeight - box1.scrollTop)//283 
+                //alert(box1.clientHeight)//283 box1可见高度 因为底部滚动条也有高度所以为283
+
+                // *可视高度clientHeight 加上滚动距离scrollTop就是整个滚动区域scrollHeight
+                //相反box2盒子的滚动区域的高度减去box1盒子的滚动条滚动的距离等于box1盒子的可视高度就说明滚动条到底了
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h3>请仔细阅读协议</h3>
+    <div id="box1">
+        <div id="box2"></div>
+    </div>
+    <button id="but">点我</button>
+</body>
+
+</html>

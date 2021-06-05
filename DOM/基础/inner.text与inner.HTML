@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            // 不同点：：
+            // inner.Text不能识别html标签
+            var div = document.getElementById('one');
+            div.innerText = '<strong>999</strong>';
+            console.log(div);
+
+            //inner.HTML能识别html标签
+            var div = document.getElementById('two');
+            div.innerHTML = '<strong>999</strong>';
+            console.log(div);
+
+            //共同点：它们能够读写元素里面的内容
+            var p = document.querySelector('p');
+            console.log(p.innerHTML); //内容包括html标签，保留空格与换行
+            console.log(p.innerText);//内容会去除html标签与空格、换行。
+        }
+    </script>
+</head>
+
+<body>
+    <div id="one"></div>
+    <div id="two"></div>
+    <p>
+        123
+        <span>5456</span>
+    </p>
+</body>
+
+</html>

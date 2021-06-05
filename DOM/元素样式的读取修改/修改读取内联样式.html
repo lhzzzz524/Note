@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+
+            var box = document.getElementById('box1');
+            var but = document.getElementById('but');
+            var but2 = document.getElementById('but2');
+
+            but.onclick = function () {
+                //在js里设置的样式都是内联样式 有着很高的优先等级 仅次于!important 如果设置!important则js设置的样式不起效
+                box.style.width = '300px';
+
+                //在js里使用驼峰命名backgroundColor  background-color在js里不行
+                box.style.backgroundColor = 'yellow';
+            }
+
+            //点击按钮能够读取样式
+            but2.onclick = function () {
+                //通过style设置的样式都是内联样式 如果直接点击第二个按钮 则不会有结果
+                alert(box.style.width);
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <button id='but'>点我一下试试</button>
+    <button id='but2'>再点我一下试试</button>
+    <div id="box1"></div>
+</body>
+
+</html>

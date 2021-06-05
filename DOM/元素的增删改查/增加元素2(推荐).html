@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        div {
+            width: 312px;
+            margin: 10px auto;
+            text-align: center;
+        }
+
+        #one {
+            position: fixed;
+            top: 5%;
+            left: 60%;
+        }
+
+        #city li {
+            float: left;
+            width: 67px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            border: 3px solid red;
+        }
+    </style>
+
+
+    <script>
+        window.onload = function () {
+            var btn = document.getElementById('btn');
+            btn.onclick = function () {
+                var city = document.getElementById('city');
+                //city.innerHTML += '<li>广州</li>';   这样每次会修改city下的所有子节点
+
+                // 推荐做法
+
+                //创建一个li
+                var li = document.createElement('li');
+                //向li中添加文本
+                li.innerHTML = '广州';
+                //把li添加到city父节点下
+                city.appendChild(li);
+
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <ul id="city">
+            <li>北京</li>
+            <li id="sh">上海</li>
+            <li id="dj">东京</li>
+            <li>首尔</li>
+        </ul>
+    </div>
+    <div id="one">
+        <button id="btn">增加子节点广州</button>
+    </div>
+</body>
+
+</html>

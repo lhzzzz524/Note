@@ -1,0 +1,22 @@
+<body>
+    <input type="radio" class="sex" value="1" name="name">女
+    <input type="radio" class="sex" value="2" name="name">男
+    <button id="radio-btn">获取选中的性别</button>
+    <script>
+        // checked用于设置或判断当前状态
+
+
+        var radio = document.getElementsByClassName("sex");
+
+        // 2.获取被选中的性别
+        var sexBtn = document.getElementById("radio-btn");
+        sexBtn.onclick = function () {
+            for (var i = 0; i < radio.length; i++) {
+                // checked判断是否处于选中状态
+                if (radio[i].checked) {
+                    console.log("选中的性别：" + radio[i].value);
+                }
+            }
+        };
+    </script>
+</body>

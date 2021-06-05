@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            background-color: yellow;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            //添加超链接
+            var btn = document.getElementById('btn');
+            var ul = document.getElementById('ul');
+
+            //这样添加的新的a节点没有单击响应函数
+            btn.onclick = function () {
+                var li = document.createElement('li');
+                li.innerHTML = '<a href="#" class="link">新的链接</a>';
+                ul.appendChild(li);
+            }
+
+            /*
+            遍历所有的a  所以这种方式不行
+            var a = document.getElementsByTagName('a');
+            for (var i = 0; i < a.length; i++) {
+                a[i].onclick = function () {
+                    alert('adf')
+                }
+            }
+            */
+
+            //想只绑定一个事件，可以作用于多个元素上面，即使是后面添加的
+            /*
+             事件的为委派:
+             事件统一绑定给共同的祖先元素，当后代元素事件触发时，会一直冒泡到祖先元素 从而通过祖先元素的响应函数来处理事件
+             利用冒泡 可以减少事件的绑定次数，提高性能
+            */
+            ul.onclick = function (event) {
+                event = event || window.event;
+
+                //target属性返回触发此事件的元素（事件的目标节点）。
+                if (event.target.className == 'link') { //判断只有点击了a才能触发事件
+                    alert('我是ul的单击响应函数');
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btn">添加超链接</button>
+    <ul id="ul">
+        <li><a href="#" class="link">1</a></li>
+        <li><a href="#" class="link">2</a></li>
+        <li><a href="#" class="link">3</a></li>
+        <li><a href="#" class="link">4</a></li>
+        <li><a href="#" class="link">5</a></li>
+    </ul><a href="#"></a>
+</body>
+
+</html>

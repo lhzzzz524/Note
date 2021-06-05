@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            height: 100px;
+            background-color: yellow;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            var but = document.getElementById('but');
+            var box1 = document.getElementById('box1');
+            but.onclick = function () {
+                /* 
+                    获取元素当前显示的样式
+                    语法：元素.currentStyle.样式名
+                    currentStyle属性只有IE浏览器能使用 
+                    如果元素不设置宽度 会输出auto
+                */
+                //alert(box1.currentStyle.width); auto
+                //因为内联样式优先级高 所以当前的背景为红色
+                alert(box1.currentStyle.backgroundColor);
+
+
+                /*
+                    getComputedStyle(参数1,参数2);
+                    该方法返回一个对象，对象里封装了当前元素对应的样式
+                    参数1：元素
+                    参数2：不是必须的，当不查询伪类元素的时候可以忽略或者传入nll
+                    如果元素不设置宽度，但是会输出具体值
+                    该方法不支持IE8以下的浏览器
+                 */
+                //var obj = getComputedStyle(box1, null);
+                alert(obj.width);
+
+
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button id='but'>点我一下试试</button>
+    <br><br>
+    <div id="box1" style="background: red;"></div>
+</body>
+
+</html>
