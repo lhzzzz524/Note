@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            var h = document.getElementById('h');
+            var num = 0;
+            /*
+            setInterval() 定时调用 可以将一个函数每隔一段时间执行一次
+            参数1：回调函数 每隔一段时间被调用一次
+            参数2：调用函数的间隔时间，单位是毫秒
+            每个setInterval()都有一个标识 clearInterval()则根据标识来关闭定时器
+            */
+            var s = setInterval(function () {
+                h.innerHTML = num;
+                num++;
+                if (num == 33) {
+                    clearInterval(1); //关闭标识1的定时器
+                }
+            }, 500);
+            alert(s);//标识1
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <h1 id="h"></h1>
+</body>
+
+</html>

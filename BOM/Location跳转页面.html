@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // History对象可以操作网页向前翻页或向后翻页
+        window.onload = function () {
+            var btn = document.getElementById('btn');
+            btn.onclick = function () {
+                //直接给location赋值 页面会自动跳转到该路径，并生成相应的历史记录 可以前后翻页
+                //location = 'http://www.qq.com';
+
+                //assign() 用来跳转到其他页面 作用和直接修改location一样
+                //location.assign('http://www.qq.com');
+
+                // reload() 重新加载当前页面 和刷新按钮一样
+                //例如火狐浏览器在文本框里输入了内容 刷新后 文本框内容依然存在
+                //如果想强制清空缓存则传入参数true 与CTRL+F5一样
+                // location.reload(true);
+
+                //区别与assign() 这是替换当前网页 不会生产历史记录 无法回退网页
+                location.replace('http://www.qq.com');
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <button id='btn'>点我</button>
+    <a href="Navigator判断浏览器.html">点我加载下个URL</a>
+    <input type="text">
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // History对象可以操作网页向前翻页或向后翻页
+        window.onload = function () {
+            var btn = document.getElementById('btn');
+            btn.onclick = function () {
+                // length属性可以返回浏览器历史列表中的 URL 数量。
+                //alert(history.length)
+
+                //加载 history 列表中的前一个 URL。
+                //history.back();
+
+                //加载 history 列表中的下一个 URL。
+                //history.forward();
+
+                //加载 history 列表中的某个具体页面 里面的参数须为一个整数 1跳转到下一个页面 -1跳转到上一个 类推
+                history.go(-1);
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <button id='btn'>点我</button>
+    <a href="Navigator判断浏览器.html">点我加载下个URL</a>
+</body>
+
+</html>

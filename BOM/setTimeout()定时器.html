@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            //setTimeout() 是延时函数 延时2秒执行
+            //需要注意的是，推迟执行的代码必须以字符串的形式，放入setTimeout， 因为引擎内部使用eval函数
+            //将字符串转为代码。如果推迟执行的是函数，则可以直接将函数名，放入setTimeout。
+            function xk() {
+                alert('熊科是sb');
+            }
+            setTimeout(xk, 2000)
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

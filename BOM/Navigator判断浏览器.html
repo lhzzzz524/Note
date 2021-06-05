@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+         Nacigator：
+            代表当前浏览器的信息，通过该对象可以来识别不同的浏览器
+            但是由于历史原因，Nacigator对象的大部分属性都已经不能帮助识别浏览器了
+            一般我们会使用userAgent来判断浏览器的信息
+
+            userAgent是一个字符串，这个字符串中包含用来描述浏览器信息的内容，不同浏览器会有不同的userAgent
+         */
+
+        //火狐的userAgent  Gecko是一个较好的css渲染引擎
+        //Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0
+
+        //chrome的userAgent
+        //Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36
+
+        //IE8的userAgent
+        //Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729)
+
+        //IE9的userAgent
+        //Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729)
+
+        //IE10的userAgent
+        //Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729)
+
+        /*
+         IE11的userAgent
+         Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729; rv:11.0) like Gecko
+        *在IE11中已经将微软和IE相关的标识都已经去除掉了，所以我们基本不能用userAgent来识别浏览器是不是IE
+        *如果通过UserAgent不能判断 可以通过一些浏览器特有的对象来判断 比如：ActiveXObject
+        */
+
+        /* 
+        if (ActiveXObject) {
+            alert('我是IE浏览器') 这样使用除了IE11都能弹出 那么我们想检查它的布尔值
+        } 
+        alert(!!ActiveXObject) 除了IE11是false 其余的都是true 那我们再判断window是否有ActiveXObject这个属性
+        
+        alert('ActiveXObject' in window); 全部是true 表示IE里有ActiveXObject这个属性
+        */
+
+        var userAgent = navigator.userAgent;
+
+        if (/Firefox/.test(userAgent)) {
+            alert('我叫火狐浏览器');
+        } else if (/Chrome/.test(userAgent)) {
+            alert('我叫Chrome');
+        } else if (/MSIE/.test(userAgent)) {
+            alert('我是IE浏览器，但不是IE11')
+        } else if ('ActiveXObject' in window) {
+            alert('我tm就是IE11，哈哈哈');
+        }
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
